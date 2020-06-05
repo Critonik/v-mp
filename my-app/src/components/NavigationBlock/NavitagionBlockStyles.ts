@@ -7,6 +7,7 @@ export const NavBlockWrapper = styled.section`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    max-width: 1920px;
     width: calc(100% - 15%);
     margin: 0 auto;
 `;

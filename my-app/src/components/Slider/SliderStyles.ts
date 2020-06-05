@@ -1,6 +1,9 @@
-import styled, { StyledComponent } from 'styled-components';
+import styled, { StyledComponent, css } from 'styled-components';
 import { defaultTheme } from '../../defaultTheme';
 import { device } from '../../GlobalStyles/mediaBreakpoints';
+import joystick from '../../icons/joystick.svg';
+import play from '../../icons/play.svg';
+import gun from '../../icons/gun.svg';
 
 interface IHeaderProps {
     count: string;
@@ -8,10 +11,23 @@ interface IHeaderProps {
 
 interface IImageProps {
     backImg: string;
+    imageArr: string[];
 }
 
-export const SliderSection : StyledComponent<any, IImageProps> = styled('section') <IImageProps>`
+interface IButtonProps {
+    backcolor: string;
+    bordercolor: string;
+    minheight: string;
+    padding: string;
+    margin: string;
+}
+
+
+export const SliderSection: StyledComponent<any, IImageProps> = styled('section') <IImageProps>`
     height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1920px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,27 +35,22 @@ export const SliderSection : StyledComponent<any, IImageProps> = styled('section
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
-   
-    //#slide0:checked ~ .controls label:nth-of-type(1):after,
-    //#slide1:checked ~ .controls label:nth-of-type(2):after,
-    //#slide2:checked ~ .controls label:nth-of-type(3):after {
-    //    border: 2px solid #fbbe3a;
-    //    background-color: #ffffff;
-    //}
-
-    //#slide0:checked ~ .slider > .slide0,
-    //#slide1:checked ~ .slider > .slide1,
-    //#slide2:checked ~ .slider > .slide2 {
-    //    opacity: 1;
-    //}
 `;
 
 
 export const SlideWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    max-width: 50%;
+    margin: auto 0 auto 75px;
+    display: none;
+    &[data-visible = 'true'] {
+        display: flex;
+    }
+    
+    @media ${device.laptop} {
+        margin-left: 175px;
+    }
 `;
 
 export const SlideInfoWrapper = styled.div`
@@ -128,28 +139,139 @@ export const LabelControlsWrapper = styled.div`
     flex-direction: row;
     width: 180px;
     justify-content: space-around;
+    margin: auto;
 `;
 
 export const SliderLabels = styled.label`
     cursor: pointer;
     display: inline-block;
-    height: 25px;
-    margin: 35px;
+    height: 1px;
+    margin: 1px;
     position: relative;
     width: 25px;
     border-radius: 50%;
     transition: background ease-in-out 0.5s;
+    
     &:after {
         border: 2px solid #AD58F9;
         background-color: #AD58F9;
         content: '';
         display: block;
-        height: 8px;
+        height: 15px;
         left: -4px;
         position: absolute;
         top: -4px;
-        width: 8px;
+        width: 15px;
         border-radius: 50%;
         box-sizing: border-box;
     }
+    
+    @media ${device.laptop} {
+        &:after {
+                height: 25px;
+                width: 25px;
+         }
+    }
+    &[data-checked = 'false'] {
+            &:after {
+                border: 2px solid #DFDFDF;
+                background-color: #DFDFDF;
+            }
+        }
+`;
+
+export const ButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 790px;
+    position: relative;
+    
+    @media ${device.laptop} {
+         flex-direction: row;
+         align-items: center;
+     }
+     
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: -60px;
+        background-image: url(${gun});
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: rotate(15.35deg);
+        width: 125px;
+        height: 71px;
+        
+        @media ${device.laptop} {
+            left: -120px;
+            width: 250px;
+            height: 141px;  
+        }
+    }
+`;
+
+export const Button: StyledComponent<any, IButtonProps> = styled('button') <IButtonProps>`
+     background: ${props => props.backcolor ? props.backcolor : defaultTheme.violet_gradient};
+     border: 1px solid ${props => props.bordercolor ? props.bordercolor : 'transparent'};
+     border-radius: 13.9457px;
+     height: 45px;
+     display: flex;
+     align-items: center;
+     padding: 10px 60px 10px 20px;
+     margin: 0 0 30px 0;
+     z-index: 10;
+     @media ${device.laptop} {
+         margin: ${props => props.margin ? props.margin : ' 0 27px 0 0'};
+         padding: 10px 60px 10px 15px;
+         height: 65px;
+     }
+     @media ${device.desktop} {
+         margin: ${props => props.margin ? props.margin : ' 0 27px 0 0'};
+         padding: ${props => props.padding ? props.padding : '30px 111px 30px 69px'};
+         height: ${props => props.minheight ? props.minheight : '89px'};
+     }
+`;
+
+export const ButtonText = styled.div`
+     position: relative;
+     text-align: left;
+     font ${defaultTheme.font.headerText};
+     font-weight: normal;
+     color: ${defaultTheme.white_main};
+        &:after {
+           position: absolute;
+           content: '';
+           width: 31px;
+           height: 31px;
+           top: -3px;
+           right: -40px;
+           background-image: url(${joystick});
+           background-position: center;
+           background-repeat: no-repeat;   
+        }
+`;
+
+export const ButtonVideoText = styled.div`
+     position: relative;
+     text-align: left;
+     font ${defaultTheme.font.sectionMontserratText};
+     font-size: 21px;
+     line-height: 26px;
+     font-weight: normal;
+     color: ${defaultTheme.black_color};
+        &:after {
+           position: absolute;
+           content: '';
+           width: 21px;
+           height: 21px;
+           top: 3px;
+           right: -28px;
+           background-image: url(${play});
+           background-position: center;
+           background-repeat: no-repeat;   
+        }
 `;

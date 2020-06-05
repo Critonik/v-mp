@@ -26,6 +26,7 @@ export const defaultTheme = {
     dark_grey: '#E1E5F2',
     sand_red: '#BA734B',
     violet: '#AD58F9',
+    violet_gradient: 'linear-gradient(257.47deg, #2051FF 0.62%, #AD58F9 100%, #AD58F9 100%);',
 
     font: {
         headerText: 'normal normal 500 24px/29px Montserrat',
