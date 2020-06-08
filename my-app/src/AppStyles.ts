@@ -10,4 +10,5 @@ export const AppBlock = styled.div`
     background-image: url(${square});
     background-position: center;
     background-size: cover;
+    overflow-y: auto;
 `;

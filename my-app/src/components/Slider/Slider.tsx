@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Button, ButtonText, ButtonVideoText,
-    ButtonWrapper,
+    ButtonWrapper, GunBlock,
     HiddenInput,
     LabelControlsWrapper,
-    SlideHeader,
+    SlideHeader, SlideImage,
     SlideInfoWrapper,
     SliderLabels,
     SliderSection,
     SlideText,
-    SlideWrapper
+    SlideWrapper, TextWrapper
 } from './SliderStyles';
 import slide0 from '../../icons/slide0.svg';
 import slide1 from '../../icons/slide1.svg';
@@ -22,6 +22,7 @@ interface IFirstBlockCardInfo {
     description: string;
     buttonText: string;
     playButtonText: string;
+    image: string;
 }
 
 const cardInfo: IFirstBlockCardInfo[] = [
@@ -30,28 +31,38 @@ const cardInfo: IFirstBlockCardInfo[] = [
         number: 1,
         description: 'Единственный в своём роде GTA 5 RP сервер с голосовым чатом и поддержкой всех версий игры.! Самый продвинутый игровой мод с большими возможностями для новичков и опытных игроков. 14 фракций с функционалом и более 10 работ, которые не дадут заскучать. Проект работает успешно уже 3 года!',
         buttonText: 'Начать играть!',
-        playButtonText: 'Ролик о проекте'
+        playButtonText: 'Ролик о проекте',
+        image: slide0,
     },
     {
         title: `Стань бандитом`,
         number: 2,
         description: 'Единственный в своём роде GTA 5 RP сервер с голосовым чатом и поддержкой всех версий игры.! Самый продвинутый игровой мод с большими возможностями для новичков и опытных игроков. 14 фракций с функционалом и более 10 работ, которые не дадут заскучать. Проект работает успешно уже 3 года!',
         buttonText: 'Начать играть!',
-        playButtonText: 'Ролик о проекте'
+        playButtonText: 'Ролик о проекте',
+        image: slide1,
     },
     {
         title: `Стань бандитом`,
         number: 3,
         description: 'Единственный в своём роде GTA 5 RP сервер с голосовым чатом и поддержкой всех версий игры.! Самый продвинутый игровой мод с большими возможностями для новичков и опытных игроков. 14 фракций с функционалом и более 10 работ, которые не дадут заскучать. Проект работает успешно уже 3 года!',
         buttonText: 'Начать играть!',
-        playButtonText: 'Ролик о проекте'
+        playButtonText: 'Ролик о проекте',
+        image: slide2,
     },
 ];
 
 export const Slider: React.FC = () => {
 
     const [slide, setSlide] = useState<number>(0);
-    const backImage = [slide0, slide1, slide2];
+
+
+    useEffect(() => {
+        document.addEventListener('mousemove', parlx);
+        return () => {
+            document.removeEventListener('mousemove', parlx);
+        };
+    }, []);
 
     const renderSliderInput = (count: number) => {
         const result: React.ReactNode[] = [];
@@ -69,28 +80,51 @@ export const Slider: React.FC = () => {
         return result;
     };
 
+    const parlx = (e: MouseEvent) => {
+        const elem = document.querySelectorAll("#parallax");
+        // Magic happens here
+        let _w = window.innerWidth / 2;
+        let _h = window.innerHeight / 2;
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+        let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 -
+        (_mouseY - _h) * 0.01}%`;
+        let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 -
+        (_mouseY - _h) * 0.02}%`;
+        let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 -
+        (_mouseY - _h) * 0.06}%`;
+        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+        if (elem) {
+            elem.forEach(item =>  (item as HTMLElement).style.backgroundPosition = x);
+        }
+    };
+
     const renderCard = (cards: IFirstBlockCardInfo[]) => {
         return cards.map((item, idx) => {
             return (
-                <SlideWrapper key={item.title + idx} data-visible={idx === slide} className={`slides slide${idx}`}>
-                    <SlideInfoWrapper>
-                        <SlideHeader count={item.number}>{item.title}</SlideHeader>
-                        <SlideText>
-                            {item.description}
-                        </SlideText>
-                    </SlideInfoWrapper>
-                    <ButtonWrapper>
-                        <Button>
-                            <ButtonText>
-                                {item.buttonText}
-                            </ButtonText>
-                        </Button>
-                        <Button backcolor={'transparent'} bordercolor={'#171717'} minheight={'52px'} padding={'15px 64px 15px 32px'}>
-                            <ButtonVideoText>
-                                {item.playButtonText}
-                            </ButtonVideoText>
-                        </Button>
-                    </ButtonWrapper>
+                <SlideWrapper key={item.title + idx} data-visible={idx === slide}>
+                    <TextWrapper>
+                        <SlideInfoWrapper>
+                            <SlideHeader count={item.number}>{item.title}</SlideHeader>
+                            <SlideText>
+                                {item.description}
+                            </SlideText>
+                        </SlideInfoWrapper>
+                        <ButtonWrapper>
+                            <Button>
+                                <ButtonText>
+                                    {item.buttonText}
+                                </ButtonText>
+                            </Button>
+                            <Button backcolor={'transparent'} bordercolor={'#171717'} minheight={'52px'} padding={'15px 64px 15px 32px'}>
+                                <ButtonVideoText>
+                                    {item.playButtonText}
+                                </ButtonVideoText>
+                            </Button>
+                            <GunBlock id={'parallax'}/>
+                        </ButtonWrapper>
+                    </TextWrapper>
+                    <SlideImage style={{height: `${document.documentElement.clientHeight}px`}} src={item.image} alt={item.title}/>
                 </SlideWrapper>
             );
         });
@@ -107,7 +141,7 @@ export const Slider: React.FC = () => {
 
 
     return (
-        <SliderSection imageArr={backImage} backImg={backImage[slide]} className='SliderSection'>
+        <SliderSection style={{height: `${document.documentElement.clientHeight - 100}px`}} className='SliderSection' >
             {renderSliderInput(cardInfo.length)}
             {renderCard(cardInfo)}
             <LabelControlsWrapper>

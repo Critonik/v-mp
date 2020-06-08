@@ -4,6 +4,7 @@ import { defaultTheme } from './defaultTheme';
 import GlobalStyles from './GlobalStyles/global-styles';
 import { Header } from './components/HeaderBlock/HeaderLayout';
 import { AppBlock } from './AppStyles';
+import MainBlock from './components/MainBlock/MainBlock';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <GlobalStyles/>
         <ThemeProvider theme={defaultTheme}>
             <Header/>
+            <MainBlock/>
         </ThemeProvider>
     </AppBlock>
   );

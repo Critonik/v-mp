@@ -30,26 +30,38 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     max-width: 1920px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-image: url(${props => props.backImg});
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
+    position: relative;
+    padding: 5% 0 0 0;
+    
+    @media ${device.desktop} {
+      justify-content: space-around;
+    }
 `;
 
 
 export const SlideWrapper = styled.div`
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 50%;
-    margin: auto 0 auto 75px;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
     display: none;
+    flex: 1 1 100%;
+    align-items: center;
+    max-height: 470px;
     &[data-visible = 'true'] {
         display: flex;
     }
     
     @media ${device.laptop} {
-        margin-left: 175px;
+        justify-content: flex-start;
+    }
+`;
+
+export const TextWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @media ${device.laptop} {
+        margin: auto 175px;
     }
 `;
 
@@ -59,6 +71,18 @@ export const SlideInfoWrapper = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     height: inherit;
+`;
+
+export const SlideImage = styled.img`
+    display: block;
+    position: absolute;
+    top: 110px;
+    right: 0;
+    opacity: 0.5;
+    max-height: 1300px;
+    @media ${device.desktop} {
+        opacity: 1;
+    }
 `;
 
 export const SlideHeader: StyledComponent<any, IHeaderProps> = styled('h2') <IHeaderProps>`
@@ -122,7 +146,7 @@ export const SlideText = styled.div`
     line-height: 19px;
     font-weight: normal;
     text-align: left;
-    max-width: 700px;
+    max-width: 500px;
     padding-bottom: 40px;
     @media ${device.laptop} {
         font-size: 24px;
@@ -139,7 +163,7 @@ export const LabelControlsWrapper = styled.div`
     flex-direction: row;
     width: 180px;
     justify-content: space-around;
-    margin: auto;
+    margin: 0 auto;
 `;
 
 export const SliderLabels = styled.label`
@@ -192,13 +216,14 @@ export const ButtonWrapper = styled.div`
          flex-direction: row;
          align-items: center;
      }
-     
-    &:before {
-        position: absolute;
+`;
+
+export const GunBlock = styled.div`
+    position: absolute;
         content: '';
         top: 0;
         left: -60px;
-        background-image: url(${gun});
+        background-image: url(${gun}), url(${gun}), url(${gun});
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -211,7 +236,6 @@ export const ButtonWrapper = styled.div`
             width: 250px;
             height: 141px;  
         }
-    }
 `;
 
 export const Button: StyledComponent<any, IButtonProps> = styled('button') <IButtonProps>`
