@@ -10,6 +10,7 @@ export const NavBlockWrapper = styled.section`
     max-width: 1920px;
     width: calc(100% - 15%);
     margin: 0 auto;
+    height: 100px;  
 `;
 
 export const Logo = styled.img`
@@ -23,7 +24,6 @@ export const NavItemWrapper = styled.nav`
     align-items: center;
     justify-content: space-between;
     width: calc(100% - 25%);
-    padding: 42px 0;
     margin-left: auto;
 `;
 

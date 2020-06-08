@@ -39,13 +39,27 @@ export const NavigationBlock: React.FC = () => {
 
     const [chosenLink, chooseLink] = useState<number>(0);
 
+    const chooseBlock = (blockId: string, linkNumber: number) => {
+        chooseLink(linkNumber);
+        const block = document.getElementById(blockId) as HTMLElement;
+        if (block) {
+            const yPos = block.getBoundingClientRect().y;
+            if (yPos) {
+                window.scrollTo({
+                    top: yPos,
+                    behavior: 'smooth',
+                });
+            }
+        }
+    }
+
     const createLinks = () => {
         return links.map((link, idx) => {
            return (
              <NavItem
                  key={idx}
                  data-choose={chosenLink === idx}
-                 onClick={() => chooseLink(idx)}
+                 onClick={() => chooseBlock(`#${link.link}`, idx)}
                  href={`#${link.link}`}
              >
                  {link.text}
