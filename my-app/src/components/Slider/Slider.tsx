@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {
     Button, ButtonText, ButtonVideoText,
     ButtonWrapper, GunBlock,
-    HiddenInput,
     LabelControlsWrapper,
     SlideHeader, SlideImage,
     SlideInfoWrapper,
@@ -63,22 +62,7 @@ export const Slider: React.FC = () => {
             document.removeEventListener('mousemove', parlx);
         };
     }, []);
-
-    const renderSliderInput = (count: number) => {
-        const result: React.ReactNode[] = [];
-        for (let i = 0; i < count; i++) {
-            result.push(
-                <HiddenInput
-                    key={i + ' input'}
-                    type="radio"
-                    name="point"
-                    id={`slide${i}`}
-                    defaultChecked={i === slide}
-                />
-            );
-        }
-        return result;
-    };
+    
 
     const parlx = (e: MouseEvent) => {
         const elem = document.querySelectorAll("#parallax");
@@ -124,7 +108,7 @@ export const Slider: React.FC = () => {
                             <GunBlock id={'parallax'}/>
                         </ButtonWrapper>
                     </TextWrapper>
-                    <SlideImage style={{height: `${document.documentElement.clientHeight}px`}} src={item.image} alt={item.title}/>
+                    <SlideImage style={{minHeight: '1080px'}} src={item.image} alt={item.title}/>
                 </SlideWrapper>
             );
         });
@@ -141,8 +125,7 @@ export const Slider: React.FC = () => {
 
 
     return (
-        <SliderSection style={{height: `${document.documentElement.clientHeight - 100}px`}} className='SliderSection' >
-            {renderSliderInput(cardInfo.length)}
+        <SliderSection className='SliderSection' >
             {renderCard(cardInfo)}
             <LabelControlsWrapper>
                 {renderSliderLabel(cardInfo.length)}

@@ -11,4 +11,5 @@ export const AppBlock = styled.div`
     background-position: center;
     background-size: cover;
     overflow-y: auto;
+    overflow-x: hidden;
 `;

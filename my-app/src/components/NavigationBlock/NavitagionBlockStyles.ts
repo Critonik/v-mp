@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { defaultTheme } from '../../defaultTheme';
 import { device } from '../../GlobalStyles/mediaBreakpoints';
+import burger from '../../icons/menu.svg';
+import cross from '../../icons/x.svg';
 
 export const NavBlockWrapper = styled.section`
     display: flex;
@@ -18,14 +20,77 @@ export const Logo = styled.img`
     height: 100px;
 `;
 
+export const BurgerMenu = styled.div`
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    background-image: url(${burger});
+    background-repeat: no-repeat;
+    background-position: center;
+    @media ${device.laptop} {
+        display: none;
+    }
+`
+
 export const NavItemWrapper = styled.nav`
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: calc(100% - 25%);
     margin-left: auto;
+    @media ${device.laptop} {
+        display: flex;
+    }
 `;
+
+export const MobileMenuWrapper = styled.nav`
+      position: fixed;
+      background: linear-gradient(to bottom, rgba(163, 80, 255, 0.8), rgba(163, 80, 255, 0.8));
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+`;
+
+
+export const MobileNavItem = styled.a`
+    font: ${defaultTheme.font.headerTextTablet};
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 46px;
+    color: ${defaultTheme.white_main};
+    text-decoration: none;
+    display: block;
+    margin-bottom: 14px;
+    &[data-choose = 'true'] {
+        border-bottom: 6.28571px solid #4E8EF3;;
+    }
+    &:link {
+        color: ${defaultTheme.white_main};
+    }
+    &:visited {
+        color: ${defaultTheme.white_main};
+    }
+`;
+
+export const CloseMobileMenuIcon = styled.div`
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    background-image: url(${cross});
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    right: 68px;
+    top: 12px;
+`;
+
 
 export const NavItem = styled.a`
     font: ${defaultTheme.font.headerTextTablet};
