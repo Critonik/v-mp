@@ -1,5 +1,5 @@
 import styled, { StyledComponent } from 'styled-components';
-import { defaultTheme } from '../../defaultTheme';
+import { defaultTheme, scrollStyles } from '../../defaultTheme';
 import { device } from '../../GlobalStyles/mediaBreakpoints';
 import joystick from '../../icons/joystick.svg';
 import play from '../../icons/play.svg';
@@ -34,6 +34,8 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     min-height: 1080px;
     justify-content: center;
     align-items: center;
+    
+    ${scrollStyles}
   
     @media ${device.laptop} {
       justify-content: flex-end;
@@ -182,7 +184,7 @@ export const LabelControlsWrapper = styled.div`
         margin-top: 0;
     }
     
-    @media ${device.laptop} {
+    @media ${device.desktop} {
         margin-bottom: 0;
     }
 `;

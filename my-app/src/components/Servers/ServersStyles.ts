@@ -1,5 +1,5 @@
 import styled, { keyframes, StyledComponent } from 'styled-components';
-import { defaultTheme } from '../../defaultTheme';
+import { defaultTheme, scrollStyles } from '../../defaultTheme';
 import { device } from '../../GlobalStyles/mediaBreakpoints';
 
 
@@ -18,6 +18,7 @@ export const ServerSectionWrapper = styled.section`
     position: relative;
     max-width: 1520px;
     margin: 0 auto;
+    ${scrollStyles};
 `;
 
 
@@ -78,11 +79,13 @@ export const ServerRow = styled.div`
      display: flex;
      justify-content: flex-start;
      margin-bottom: 19px;
+     align-items: center;
 `;
 
 export const ServerNum = styled.div`
     background: linear-gradient(129.95deg, #AD58F9 0%, #4E8EF3 100.54%);
     font: ${defaultTheme.font.linkText};
+    color: ${defaultTheme.white_main};
     font-size: 64px;
     line-height: 78px;
     text-align: center;
@@ -106,8 +109,9 @@ export const ServerNameWrap = styled.div`
 
 export const ServerName: StyledComponent<any, IHeaderProps> = styled('h3') <IHeaderProps>`
     font: ${defaultTheme.font.headerBoldText};
-    color: #000;
-    margin: 0 0 10px;
+    font-size: 48px;
+    line-height: 59px;
+    margin: 0;
     &:after {
         position: absolute;
         right: -60px;
@@ -122,12 +126,11 @@ export const ServerName: StyledComponent<any, IHeaderProps> = styled('h3') <IHea
 `;
 
 export const PlayerCount = styled.p`
-    margin: 0;
     font: ${defaultTheme.font.headerBoldText};
     line-height: 24px;
     font-size: 29px;
     color: #000;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 `;
 
 export const ProgressBar = styled.div`

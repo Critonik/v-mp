@@ -1,5 +1,5 @@
 import styled, { StyledComponent } from 'styled-components';
-import { defaultTheme } from '../../defaultTheme';
+import { defaultTheme, scrollStyles } from '../../defaultTheme';
 import { device } from '../../GlobalStyles/mediaBreakpoints';
 import playWhite from '../../icons/playWhite.svg';
 
@@ -20,6 +20,7 @@ export const StepsWrapper = styled.section`
     position: relative;
     max-width: 1920px;
     margin: 0 auto;
+    ${scrollStyles};
 `;
 
 export const StepsGuy = styled.img`

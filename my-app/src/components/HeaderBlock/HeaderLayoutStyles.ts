@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { scrollStyles } from '../../defaultTheme';
 
 export const HeaderTag = styled.header`
     width: 100%;
@@ -7,4 +8,5 @@ export const HeaderTag = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    ${scrollStyles};
 `;
