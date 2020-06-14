@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { defaultTheme } from '../../defaultTheme';
+import { defaultTheme, scrollStyles } from '../../defaultTheme';
 
 export const MainBlockWrapper = styled.main`
       display: flex;
@@ -8,4 +8,5 @@ export const MainBlockWrapper = styled.main`
       height: 100%;
       background-color: ${defaultTheme.white_main};
       z-index: 1000;
+      ${scrollStyles};
 `;

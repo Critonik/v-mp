@@ -19,27 +19,27 @@ interface ILinkData {
 const links = [
     {
         text: 'Главная',
-        link: 'main',
+        link: '#main',
     },
     {
         text: 'Как начать играть?',
-        link: 'how',
+        link: '#how',
     },
     {
         text: 'Список серверов',
-        link: 'serverlist',
+        link: '#serverlist',
     },
     {
         text: 'Новости',
-        link: 'news',
+        link: '#news',
     },
     {
         text: 'Донат',
-        link: 'donate',
+        link: '#donate',
     },
     {
         text: 'Форум',
-        link: 'forum',
+        link: 'https://forum.v-mp.ru/',
     },
 ];
 
@@ -49,6 +49,7 @@ export const NavigationBlock: React.FC = () => {
     const [isOpen, setOpen] = useState<boolean>(false);
 
     const chooseBlock = (blockId: string, linkNumber: number) => {
+        if (blockId === 'https://forum.v-mp.ru/') return;
         chooseLink(linkNumber);
         const block = document.getElementById(blockId) as HTMLElement;
         if (block) {
@@ -100,8 +101,8 @@ export const NavigationBlock: React.FC = () => {
              <NavItem
                  key={idx}
                  data-choose={chosenLink === idx}
-                 onClick={() => chooseBlock(`#${link.link}`, idx)}
-                 href={`#${link.link}`}
+                 onClick={() => chooseBlock(`${link.link}`, idx)}
+                 href={`${link.link}`}
              >
                  {link.text}
              </NavItem>
@@ -115,8 +116,8 @@ export const NavigationBlock: React.FC = () => {
                 <MobileNavItem
                     key={idx}
                     data-choose={chosenLink === idx}
-                    onClick={() => chooseBlockMobile(`#${link.link}`, idx)}
-                    href={`#${link.link}`}
+                    onClick={() => chooseBlockMobile(`${link.link}`, idx)}
+                    href={`${link.link}`}
                 >
                     {link.text}
                 </MobileNavItem>

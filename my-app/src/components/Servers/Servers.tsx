@@ -75,7 +75,7 @@ const Servers: React.FC = () => {
         getDataFromServer(firstServer).then((resolve) => {
             const result = convertDataFromServer({
                 serverData: resolve,
-                serverName: 'V-MP Server 01 [TEXT CHAT]',
+                serverName: 'V-MP Server 01',
                 count: 1,
                 icon: keyboard,
             });
@@ -84,7 +84,7 @@ const Servers: React.FC = () => {
         getDataFromServer(secondServer).then((resolve) => setServerTwoData(convertDataFromServer({
             serverData: resolve,
             count: 2,
-            serverName: 'V-MP Server 02 [VOICE CHAT]',
+            serverName: 'V-MP Server 02',
             icon: micro,
         })));
         setLoaded(true);
