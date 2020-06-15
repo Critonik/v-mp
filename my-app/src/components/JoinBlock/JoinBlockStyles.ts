@@ -100,6 +100,18 @@ export const SocialImageWrapper: StyledComponent<any, ISocialImage> = styled.div
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &:before {
+        position: absolute;
+        top: -13px;
+        right: -33px;
+        padding: 6px 10px 4px 14px;
+        background-color: ${props => props.socialColor};
+        border: 1.62779px solid ${props => props.socialColor};
+        border-radius: 5px;
+        content: '5000+';
+        font: ${defaultTheme.font.licenseKey};
+        color ${defaultTheme.white_main};
+    }
 `;
 
 export const SubscribeButton = styled.a`
