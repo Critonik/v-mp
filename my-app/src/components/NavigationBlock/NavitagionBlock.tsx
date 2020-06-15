@@ -9,8 +9,9 @@ import {
     MobileMenuWrapper, CloseMobileMenuIcon
 } from './NavitagionBlockStyles';
 import Logotype from '../../icons/logo.svg';
+import { ILinks } from '../../App';
 
-interface ILinkData {
+export interface ILinkData {
     text: string;
     link: string;
 }
@@ -43,14 +44,13 @@ const links = [
     },
 ];
 
-export const NavigationBlock: React.FC = () => {
+export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink}) => {
 
-    const [chosenLink, chooseLink] = useState<number>(0);
     const [isOpen, setOpen] = useState<boolean>(false);
 
     const chooseBlock = (blockId: string, linkNumber: number) => {
         if (blockId === 'https://forum.v-mp.ru/') return;
-        chooseLink(linkNumber);
+        setLink(linkNumber);
         const block = document.getElementById(blockId) as HTMLElement;
         if (block) {
             const yPos = block.getBoundingClientRect().y;
@@ -64,7 +64,7 @@ export const NavigationBlock: React.FC = () => {
     }
 
     const chooseBlockMobile = (blockId: string, linkNumber: number) => {
-        chooseLink(linkNumber);
+        setLink(linkNumber);
         const block = document.getElementById(blockId) as HTMLElement;
         if (block) {
             const yPos = block.getBoundingClientRect().y;
@@ -100,7 +100,7 @@ export const NavigationBlock: React.FC = () => {
            return (
              <NavItem
                  key={idx}
-                 data-choose={chosenLink === idx}
+                 data-choose={propLink === idx}
                  onClick={() => chooseBlock(`${link.link}`, idx)}
                  href={`${link.link}`}
              >
@@ -115,7 +115,7 @@ export const NavigationBlock: React.FC = () => {
             return (
                 <MobileNavItem
                     key={idx}
-                    data-choose={chosenLink === idx}
+                    data-choose={propLink === idx}
                     onClick={() => chooseBlockMobile(`${link.link}`, idx)}
                     href={`${link.link}`}
                 >
