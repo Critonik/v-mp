@@ -21,6 +21,7 @@ export const StepsWrapper = styled.section`
     max-width: 1920px;
     margin: 0 auto;
     ${scrollStyles};
+    padding-top: 48px;
 `;
 
 export const StepsGuy = styled.img`

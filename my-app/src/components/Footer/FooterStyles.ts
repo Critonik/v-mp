@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import square from '../../icons/square.svg'
 import { device } from '../../GlobalStyles/mediaBreakpoints';
 import { defaultTheme } from '../../defaultTheme';
+import { Link } from 'react-router-dom';
 
 export const FooterBlock = styled.footer`
     display: flex;
@@ -54,7 +55,7 @@ export const FooterNavItemWrapper = styled.nav`
 `;
 
 
-export const NavItem = styled.a`
+export const NavItem = styled(Link)`
     font: ${defaultTheme.font.headerTextTablet};
     color: ${defaultTheme.black_color};
     font-size: 24px;

@@ -53,7 +53,7 @@ const NewsBlock: React.FC = () => {
             return (
                 <OneNewsWrapper onClick={() => window.open('https://vk.com/gta5m')} key={idx}>
                     <InnerOneNewsWrapper>
-                        <img className={'news-image'} src={findImage ? findImage.url : defaultNewsPicture} alt={'news image'}/>
+                        <img className={'news-image'} src={findImage ? findImage.url : defaultNewsPicture} alt={'vk news'}/>
                         <TextWrapper>
                             <HeadAndDateWrap>
                                 <OneNewsHead>Обновление!</OneNewsHead>
@@ -70,7 +70,7 @@ const NewsBlock: React.FC = () => {
     };
 
     return (
-      <NewsBlockSection id={'news'}>
+      <NewsBlockSection id={'#news'}>
           <NewsHeader>Новости</NewsHeader>
           <NewsWrapper>
               {createNews()}

@@ -103,6 +103,8 @@ export const SlideImage = styled.img`
     right: 0;
     opacity: 0.3;
     max-height: 1300px;
+    background-repeat: no-repeat;
+    background-size: contain;
     @media ${device.desktop} {
         opacity: 1;
         transform: translateX(26%);
@@ -168,7 +170,6 @@ export const SlideText = styled.div`
     @media ${device.laptop} {
         max-width: 900px;
     }
-    
 `;
 
 export const LabelControlsWrapper = styled.div`
@@ -296,7 +297,7 @@ export const ButtonText = styled.div`
 export const ButtonVideoText = styled.div`
      position: relative;
      text-align: left;
-     font ${defaultTheme.font.sectionMontserratText};
+     font: ${defaultTheme.font.sectionMontserratText};
      font-size: 21px;
      line-height: 26px;
      font-weight: normal;
