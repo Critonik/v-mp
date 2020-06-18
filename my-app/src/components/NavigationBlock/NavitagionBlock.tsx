@@ -6,7 +6,8 @@ import {
     NavItemWrapper,
     BurgerMenu,
     MobileNavItem,
-    MobileMenuWrapper, CloseMobileMenuIcon
+    MobileMenuWrapper,
+    CloseMobileMenuIcon
 } from './NavitagionBlockStyles';
 import Logotype from '../../icons/logo.svg';
 import { ILinks } from '../../App';
@@ -44,13 +45,17 @@ const links = [
     },
 ];
 
-export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink}) => {
+export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink, disable}) => {
 
     const [isOpen, setOpen] = useState<boolean>(false);
 
+
     const chooseBlock = (blockId: string, linkNumber: number) => {
         if (blockId === 'https://forum.v-mp.ru/') return;
-        setLink(linkNumber);
+        setLink({
+            type: 'change',
+            payload : linkNumber
+        });
         const block = document.getElementById(blockId) as HTMLElement;
         if (block) {
             const yPos = block.getBoundingClientRect().y;
@@ -64,7 +69,10 @@ export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink}) => 
     }
 
     const chooseBlockMobile = (blockId: string, linkNumber: number) => {
-        setLink(linkNumber);
+        setLink({
+            type: 'change',
+            payload : linkNumber
+        });
         const block = document.getElementById(blockId) as HTMLElement;
         if (block) {
             const yPos = block.getBoundingClientRect().y;
@@ -98,14 +106,14 @@ export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink}) => 
     const createLinks = (links: ILinkData[]) => {
         return links.map((link, idx) => {
            return (
-             <NavItem
-                 key={idx}
-                 data-choose={propLink === idx}
-                 onClick={() => chooseBlock(`${link.link}`, idx)}
-                 href={`${link.link}`}
-             >
-                 {link.text}
-             </NavItem>
+                 <NavItem
+                     key={idx}
+                     data-choose={propLink === idx}
+                     onClick={() => chooseBlock(`${link.link}`, idx)}
+                     to={{ pathname: link.link === '#donate' ? '/payment/donate' : `/${link.link}` }}
+                 >
+                     {link.text}
+                 </NavItem>
            );
         });
     }
@@ -117,7 +125,7 @@ export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink}) => 
                     key={idx}
                     data-choose={propLink === idx}
                     onClick={() => chooseBlockMobile(`${link.link}`, idx)}
-                    href={`${link.link}`}
+                    to={{ pathname: link.link === '#donate' ? '/payment/donate' : `/${link.link}` }}
                 >
                     {link.text}
                 </MobileNavItem>

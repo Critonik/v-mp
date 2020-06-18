@@ -1,29 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './defaultTheme';
 import GlobalStyles from './GlobalStyles/global-styles';
-import { Header } from './components/HeaderBlock/HeaderLayout';
 import { AppBlock } from './AppStyles';
-import MainBlock from './components/MainBlock/MainBlock';
-import Footer from './components/Footer/Footer';
+import MainPage from './components/MainPage/MainPage';
+import { Route, Switch } from 'react-router-dom';
+import DonatePage from './components/DonatePage/DonatePage';
 
 
 export interface ILinks {
     link: number;
     setLink: (a?: any) => void;
+    disable?: boolean;
+    style?: React.CSSProperties
 }
 
 function App() {
 
-    const [link, setLink] = useState<number>(0);
+
+    const renderPages = () => {
+        return (
+            <Switch>
+                <Route exact path='/' component={MainPage} />
+                <Route exact path='/:category' component={MainPage} />
+                <Route exact path='/payment/donate' component={DonatePage} />
+            </Switch>
+        );
+    };
 
     return (
     <AppBlock>
         <GlobalStyles/>
         <ThemeProvider theme={defaultTheme}>
-                <Header link={link} setLink={setLink}/>
-                <MainBlock/>
-                <Footer link={link} setLink={setLink}/>
+            {renderPages()}
         </ThemeProvider>
     </AppBlock>
   );

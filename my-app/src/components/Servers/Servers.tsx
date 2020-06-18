@@ -116,7 +116,7 @@ const Servers: React.FC = () => {
 
     return (
         isLoaded ?
-        <ServerSectionWrapper id={'serverlist'}>
+        <ServerSectionWrapper id={'#serverlist'}>
             <ServerHeader>Список серверов</ServerHeader>
             <ServersWrapper>
                 {createServers(serverOneData)}

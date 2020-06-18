@@ -34,17 +34,20 @@ const links = [
 ];
 
 
-const Footer: React.FC<ILinks> = ({link: propLink, setLink}) => {
+const Footer: React.FC<ILinks> = ({link: propLink, style, setLink}) => {
 
     const chooseBlock = (blockId: string, linkNumber: number) => {
         if (blockId === 'https://forum.v-mp.ru/') return;
-        setLink(linkNumber);
+        setLink({
+            type: 'change',
+            payload : linkNumber
+        });
         const block = document.getElementById(blockId) as HTMLElement;
         if (block) {
-            const yPos = block.getBoundingClientRect().y;
+            const yPos = block.getBoundingClientRect().top;
             if (yPos) {
                 window.scrollTo({
-                    top: yPos,
+                    top: yPos + window.pageYOffset,
                     behavior: 'smooth',
                 });
             }
@@ -59,7 +62,7 @@ const Footer: React.FC<ILinks> = ({link: propLink, setLink}) => {
                     key={idx}
                     data-choose={propLink === idx}
                     onClick={() => chooseBlock(`${link.link}`, idx)}
-                    href={`${link.link}`}
+                    to={{ pathname: link.link === '#donate' ? '/payment/donate' : `/${link.link}` }}
                 >
                     {link.text}
                 </NavItem>
@@ -70,7 +73,7 @@ const Footer: React.FC<ILinks> = ({link: propLink, setLink}) => {
 
     return (
         <>
-            <FooterBlock>
+            <FooterBlock style={style}>
                 <FooterWrapper>
                     <Logo className={'footer-logo'} style={{width: '204px', height: '204px'}} src={Logotype} alt=''/>
                     <FooterNavItemWrapper>

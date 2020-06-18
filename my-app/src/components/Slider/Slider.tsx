@@ -11,8 +11,11 @@ import {
     SlideWrapper, TextWrapper
 } from './SliderStyles';
 import slide0 from '../../icons/slide0.svg';
+import paralaxBg0 from '../../icons/paralaxBg0.svg';
 import slide1 from '../../icons/slide1.svg';
+import paralaxBg1 from '../../icons/paralaxBg1.svg';
 import slide2 from '../../icons/slide2.svg';
+import paralaxBg2 from '../../icons/paralaxBg2.svg';
 
 
 interface IFirstBlockCardInfo {
@@ -22,6 +25,7 @@ interface IFirstBlockCardInfo {
     buttonText: string;
     playButtonText: string;
     image: string;
+    bgImage: string;
 }
 
 const cardInfo: IFirstBlockCardInfo[] = [
@@ -32,6 +36,7 @@ const cardInfo: IFirstBlockCardInfo[] = [
         buttonText: 'Начать играть!',
         playButtonText: 'Ролик о проекте',
         image: slide0,
+        bgImage: paralaxBg0,
     },
     {
         title: `Стань бандитом`,
@@ -40,6 +45,7 @@ const cardInfo: IFirstBlockCardInfo[] = [
         buttonText: 'Начать играть!',
         playButtonText: 'Ролик о проекте',
         image: slide1,
+        bgImage: paralaxBg1,
     },
     {
         title: `Стань бандитом`,
@@ -48,6 +54,7 @@ const cardInfo: IFirstBlockCardInfo[] = [
         buttonText: 'Начать играть!',
         playButtonText: 'Ролик о проекте',
         image: slide2,
+        bgImage: paralaxBg2,
     },
 ];
 
@@ -108,7 +115,7 @@ export const Slider: React.FC = () => {
                             <GunBlock id={'parallax'}/>
                         </ButtonWrapper>
                     </TextWrapper>
-                    <SlideImage style={{minHeight: '1080px'}} src={item.image} alt={item.title}/>
+                    <SlideImage id={'parallax'} style={{minHeight: '1080px', backgroundImage: `url(${item.bgImage})`,}} src={item.image} alt={item.title}/>
                 </SlideWrapper>
             );
         });

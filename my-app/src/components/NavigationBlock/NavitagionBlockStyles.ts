@@ -3,6 +3,7 @@ import { defaultTheme } from '../../defaultTheme';
 import { device } from '../../GlobalStyles/mediaBreakpoints';
 import burger from '../../icons/menu.svg';
 import cross from '../../icons/x.svg';
+import { Link } from 'react-router-dom';
 
 export const NavBlockWrapper = styled.section`
     display: flex;
@@ -59,7 +60,7 @@ export const MobileMenuWrapper = styled.nav`
 `;
 
 
-export const MobileNavItem = styled.a`
+export const MobileNavItem = styled(Link)`
     font: ${defaultTheme.font.headerTextTablet};
     font-weight: 500;
     font-size: 38px;
@@ -77,6 +78,7 @@ export const MobileNavItem = styled.a`
     &:visited {
         color: ${defaultTheme.white_main};
     }
+    
 `;
 
 export const CloseMobileMenuIcon = styled.div`
@@ -92,7 +94,7 @@ export const CloseMobileMenuIcon = styled.div`
 `;
 
 
-export const NavItem = styled.a`
+export const NavItem = styled(Link)`
     font: ${defaultTheme.font.headerTextTablet};
     color: ${defaultTheme.black_color};
     text-decoration: none;
@@ -115,5 +117,5 @@ export const NavItem = styled.a`
         font-size: 24px;
         line-height: 29px;
     }
-    
+     
 `;
