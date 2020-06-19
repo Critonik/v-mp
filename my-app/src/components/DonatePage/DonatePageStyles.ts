@@ -21,11 +21,7 @@ export const DonatePageWrap = styled.div`
     align-items: center;
     
     ${scrollStyles}
-  
-    @media ${device.laptop} {
-      justify-content: flex-end;
-    }
-    
+ 
     @media ${device.desktop} {
       justify-content: space-around;
       align-items: flex-start;
