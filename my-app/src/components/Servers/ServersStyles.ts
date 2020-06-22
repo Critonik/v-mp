@@ -19,6 +19,7 @@ export const ServerSectionWrapper = styled.section`
     max-width: 1520px;
     margin: 0 auto;
     ${scrollStyles};
+    padding-top: 48px;
 `;
 
 

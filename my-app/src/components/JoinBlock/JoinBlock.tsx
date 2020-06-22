@@ -50,7 +50,7 @@ const JoinBlock: React.FC = () => {
               <OneSocialWrapper key={idx}>
                   <SocialHead>{item.title}</SocialHead>
                   <SocialImageWrapper socialColor={item.color}>
-                      <img src={item.image} alt={''} />
+                      <img loading={'lazy'} src={item.image} alt={''} />
                   </SocialImageWrapper>
                   <SubscribeButton href={`${item.link}`} target={'_blank'}>Присоединяйтесь</SubscribeButton>
               </OneSocialWrapper>

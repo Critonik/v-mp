@@ -97,6 +97,7 @@ export const TextWrapper = styled.div`
     flex-direction: column;
     margin-left: 17px;
     max-height: 205px;
+    min-height: 205px;
     overflow: auto;
     ${scrollStyles}
 `;

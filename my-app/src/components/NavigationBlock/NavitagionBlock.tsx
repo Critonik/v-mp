@@ -18,26 +18,26 @@ export interface ILinkData {
 }
 
 
-const links = [
+export const links = [
     {
         text: 'Главная',
-        link: '#main',
+        link: 'main',
     },
     {
         text: 'Как начать играть?',
-        link: '#how',
+        link: 'how',
     },
     {
         text: 'Список серверов',
-        link: '#serverlist',
+        link: 'serverlist',
     },
     {
         text: 'Новости',
-        link: '#news',
+        link: 'news',
     },
     {
         text: 'Донат',
-        link: '#donate',
+        link: 'donate',
     },
     {
         text: 'Форум',
@@ -51,12 +51,15 @@ export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink, disa
 
 
     const chooseBlock = (blockId: string, linkNumber: number) => {
-        if (blockId === 'https://forum.v-mp.ru/') return;
+        if (blockId === 'https://forum.v-mp.ru/') {
+            window.location.href = blockId;
+            return;
+        }
         setLink({
             type: 'change',
             payload : linkNumber
         });
-        const block = document.getElementById(blockId) as HTMLElement;
+        const block = document.getElementById(`#${blockId}`) as HTMLElement;
         if (block) {
             const yPos = block.getBoundingClientRect().y;
             if (yPos) {
@@ -69,11 +72,15 @@ export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink, disa
     }
 
     const chooseBlockMobile = (blockId: string, linkNumber: number) => {
+        if (blockId === 'https://forum.v-mp.ru/') {
+            window.location.href = blockId;
+            return;
+        }
         setLink({
             type: 'change',
             payload : linkNumber
         });
-        const block = document.getElementById(blockId) as HTMLElement;
+        const block = document.getElementById(`#${blockId}`) as HTMLElement;
         if (block) {
             const yPos = block.getBoundingClientRect().y;
             if (yPos) {
@@ -110,7 +117,11 @@ export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink, disa
                      key={idx}
                      data-choose={propLink === idx}
                      onClick={() => chooseBlock(`${link.link}`, idx)}
-                     to={{ pathname: link.link === '#donate' ? '/payment/donate' : `/${link.link}` }}
+                     to={{ pathname: link.link === 'donate'
+                             ? '/payment/donate'
+                             : link.link === 'https://forum.v-mp.ru/'
+                                 ? '/'
+                                 : `/main/${link.link}`}}
                  >
                      {link.text}
                  </NavItem>
@@ -125,7 +136,11 @@ export const NavigationBlock: React.FC<ILinks> = ({link: propLink, setLink, disa
                     key={idx}
                     data-choose={propLink === idx}
                     onClick={() => chooseBlockMobile(`${link.link}`, idx)}
-                    to={{ pathname: link.link === '#donate' ? '/payment/donate' : `/${link.link}` }}
+                    to={{ pathname: link.link === 'donate'
+                            ? '/payment/donate'
+                            : link.link === 'https://forum.v-mp.ru/'
+                                ? '/'
+                                : `/main/${link.link}`}}
                 >
                     {link.text}
                 </MobileNavItem>

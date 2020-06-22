@@ -22,7 +22,7 @@ function App() {
         return (
             <Switch>
                 <Route exact path='/' component={MainPage} />
-                <Route exact path='/:category' component={MainPage} />
+                <Route exact path='/main/:category' component={MainPage} />
                 <Route exact path='/payment/donate' component={DonatePage} />
             </Switch>
         );

@@ -9,7 +9,7 @@ export const AppBlock = styled.div`
     align-items: center;
     background-image: url(${square});
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     overflow-y: auto;
     overflow-x: hidden;
 `;

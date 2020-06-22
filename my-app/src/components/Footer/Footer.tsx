@@ -9,23 +9,23 @@ import DocumentBlock from '../DocumentBlock/DocumentBlock';
 const links = [
     {
         text: 'Главная',
-        link: '#main',
+        link: 'main',
     },
     {
         text: 'Как начать играть?',
-        link: '#how',
+        link: 'how',
     },
     {
         text: 'Список серверов',
-        link: '#serverlist',
+        link: 'serverlist',
     },
     {
         text: 'Новости',
-        link: '#news',
+        link: 'news',
     },
     {
         text: 'Донат',
-        link: '#donate',
+        link: 'donate',
     },
     {
         text: 'Форум',
@@ -37,12 +37,15 @@ const links = [
 const Footer: React.FC<ILinks> = ({link: propLink, style, setLink}) => {
 
     const chooseBlock = (blockId: string, linkNumber: number) => {
-        if (blockId === 'https://forum.v-mp.ru/') return;
+        if (blockId === 'https://forum.v-mp.ru/') {
+            window.location.href = blockId;
+            return;
+        }
         setLink({
             type: 'change',
             payload : linkNumber
         });
-        const block = document.getElementById(blockId) as HTMLElement;
+        const block = document.getElementById(`#${blockId}`) as HTMLElement;
         if (block) {
             const yPos = block.getBoundingClientRect().top;
             if (yPos) {
@@ -62,7 +65,11 @@ const Footer: React.FC<ILinks> = ({link: propLink, style, setLink}) => {
                     key={idx}
                     data-choose={propLink === idx}
                     onClick={() => chooseBlock(`${link.link}`, idx)}
-                    to={{ pathname: link.link === '#donate' ? '/payment/donate' : `/${link.link}` }}
+                    to={{ pathname: link.link === 'donate'
+                            ? '/payment/donate'
+                            : link.link === 'https://forum.v-mp.ru/'
+                                ? '/'
+                                : `/main/${link.link}`}}
                 >
                     {link.text}
                 </NavItem>

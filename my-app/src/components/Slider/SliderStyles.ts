@@ -11,7 +11,7 @@ interface IHeaderProps {
 
 interface IImageProps {
     backImg: string;
-    imageArr: string[];
+    tabletImage: string;
 }
 
 interface IButtonProps {
@@ -34,16 +34,41 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     min-height: 1080px;
     justify-content: center;
     align-items: center;
-    
     ${scrollStyles}
+    
   
     @media ${device.laptop} {
-      justify-content: flex-end;
+        justify-content: flex-end;
     }
     
     @media ${device.desktop} {
-      justify-content: space-around;
-      align-items: flex-start;
+        background-image: url(${props => props.tabletImage});
+        background-size: 1080px;
+        background-repeat: no-repeat;
+        background-position: right top;
+        justify-content: space-around;
+        align-items: flex-start;
+        &:before {
+            display: none;
+        }
+    }
+`;
+
+export const TabletBackground = styled.div`
+    background-repeat: no-repeat;
+    background-size: 920px;
+    background-position: right top;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    
+    @media ${device.desktop} {
+        display: none;
     }
 `;
 
@@ -96,15 +121,19 @@ export const SlideInfoWrapper = styled.div`
     height: inherit;
 `;
 
-export const SlideImage = styled.img`
+export const SlideImage = styled.div`
     display: block;
     position: absolute;
+    width: 100%;
     top: 20px;
     right: 0;
     opacity: 0.3;
     max-height: 1300px;
     background-repeat: no-repeat;
     background-size: contain;
+    @media ${device.laptop} {
+          width: 69%;
+    }
     @media ${device.desktop} {
         opacity: 1;
         transform: translateX(26%);
@@ -269,6 +298,7 @@ export const Button: StyledComponent<any, IButtonProps> = styled('button') <IBut
      border-radius: 13.9457px;
      display: flex;
      align-items: center;
+     cursor: pointer;
      z-index: 10;
      margin: ${props => props.margin ? props.margin : ' 0 27px 0 0'};
      padding: ${props => props.padding ? props.padding : '30px 111px 30px 69px'};

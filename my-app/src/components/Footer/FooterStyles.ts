@@ -41,8 +41,11 @@ export const FooterNavItemWrapper = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin: 10px 0;
     
     @media ${device.laptop} {
+         margin-top: 0;
+         margin-bottom: 0;
          margin-right: 150px;
     }
     

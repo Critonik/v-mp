@@ -198,21 +198,20 @@ export const SelectOptionWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     z-index: 100;
-    background-color: white;
+    background-color: #4E8EF3;
 `;
 
 
 export const SelectOption = styled.div`
-     font: ${defaultTheme.font.headerText};
-     color: #000;
-     padding: 27px 0 27px 27px;
-     height: 84px;
-     min-width: 472px;
-     max-width: 472px;
-     border: 0.801155px solid #000000;
+    font: ${defaultTheme.font.headerText};
+    color: #000;
+    padding: 27px 0 27px 27px;
+    height: 84px;
+    min-width: 472px;
+    max-width: 472px;
     box-sizing: border-box;
-    border-radius: 8.01155px;
     text-align: left;
+    cursor: pointer;
 `;
 
 export const RuleLink = styled.a`

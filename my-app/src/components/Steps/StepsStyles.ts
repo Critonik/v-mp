@@ -71,6 +71,7 @@ export const ContentWrapper = styled.div`
     width: 100%;
     flex-wrap: wrap;
     height: 100%;
+    max-width: 1350px;
 `;
 
 export const CardWrapper = styled.div`
@@ -160,9 +161,16 @@ export const DownloadButton: StyledComponent<any, IButtonProps> = styled('button
     cursor: pointer;
 `;
 
-export const StepButtonText: StyledComponent<any, IButtonProps> = styled('div') <IButtonProps>`
+export const StepButtonText: StyledComponent<any, IButtonProps> = styled('a') <IButtonProps>`
     text-align: center;
     position: relative;
+    display: block;
+    text-decoration: none;
+    color: #171717;
+    &:link {
+        color: #171717;
+        text-decoration: none;
+    }
     &:after {
         position: absolute;
         content: '';
@@ -187,6 +195,7 @@ export const Button = styled.button`
      padding: 20px 50px 20px 30px;
      z-index: 10;
      margin-left: 92px;
+     cursor: pointer;
 `;
 
 export const ButtonText = styled.div`

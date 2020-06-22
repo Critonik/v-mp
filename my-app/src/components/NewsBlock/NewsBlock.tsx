@@ -51,9 +51,9 @@ const NewsBlock: React.FC = () => {
         return vkData.map((post, idx) => {
             const findImage = post.attachments[0].photo.sizes.find(item => item.type === 'r');
             return (
-                <OneNewsWrapper onClick={() => window.open('https://vk.com/gta5m')} key={idx}>
+                <OneNewsWrapper key={idx}>
                     <InnerOneNewsWrapper>
-                        <img className={'news-image'} src={findImage ? findImage.url : defaultNewsPicture} alt={'vk news'}/>
+                        <img loading={'lazy'} className={'news-image'} src={findImage ? findImage.url : defaultNewsPicture} alt={'vk news'}/>
                         <TextWrapper>
                             <HeadAndDateWrap>
                                 <OneNewsHead>Обновление!</OneNewsHead>
