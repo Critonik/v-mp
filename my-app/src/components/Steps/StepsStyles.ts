@@ -54,6 +54,7 @@ export const StepsHeader = styled.h2`
         -webkit-text-stroke: 0.5px  #AD58F9;
         opacity: 0.3;
         color: transparent;
+        right: 0;
     }
     &:after {
       position: absolute;
@@ -156,7 +157,7 @@ export const DownloadButton: StyledComponent<any, IButtonProps> = styled('button
     border: 1px solid ${defaultTheme.black_color};
     border-radius: 6px;
     background-color: transparent;
-    padding: 13px 48px 13px 19px;
+    padding: 13px 0 13px 0;
     margin-top: 10px;
     cursor: pointer;
 `;
@@ -164,9 +165,11 @@ export const DownloadButton: StyledComponent<any, IButtonProps> = styled('button
 export const StepButtonText: StyledComponent<any, IButtonProps> = styled('a') <IButtonProps>`
     text-align: center;
     position: relative;
-    display: block;
     text-decoration: none;
     color: #171717;
+    display: flex;
+    padding-right: 36px;
+    padding-left: 19px;
     &:link {
         color: #171717;
         text-decoration: none;
@@ -178,7 +181,7 @@ export const StepButtonText: StyledComponent<any, IButtonProps> = styled('a') <I
         background-repeat: no-repeat;
         background-position: center;
         top: 1px;
-        right: -28px;
+        right: 13px;
         width: 22px;
         height: 21px;
     }
@@ -199,6 +202,7 @@ export const Button = styled.button`
 `;
 
 export const ButtonText = styled.div`
+     display: flex;
      position: relative;
      text-align: left;
      font ${defaultTheme.font.headerText};

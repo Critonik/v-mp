@@ -13,7 +13,6 @@ export const JoinBlockSection = styled.section`
     align-items: center;
     background-color: #FBFBFB;
     padding: 43px 0 83px;
-    min-height: 621px;
 `;
 
 export const JoinBlockWrapper = styled.div`
@@ -44,6 +43,7 @@ export const JoinHeader = styled.h2`
         -webkit-text-stroke: 0.5px  #AD58F9;
         opacity: 0.3;
         color: transparent;
+        right: 0;
     }
     &:after {
       position: absolute;

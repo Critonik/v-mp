@@ -205,10 +205,12 @@ export const PromoInstruction = styled.p`
     color: #000;
     font: ${defaultTheme.font.headerText};
     font-weight: 600;
+    width: 447px;
 `;
 
 export const InputWrapper = styled.span`
     margin-bottom: 8px;
+    height: 64px;
     position: relative;
     &:focus {
         outline: none;
@@ -217,7 +219,7 @@ export const InputWrapper = styled.span`
         position: absolute;
         content: '';
         width: 59px;
-        height: 63px;
+        height: 100%;
         cursor: pointer;
         top: 0px;
         right: -59px;
@@ -233,6 +235,7 @@ export const InputWrapper = styled.span`
 export const PromoField = styled.input`
     width: 352px;
     padding: 16px 0;
+    height: 100%;
     display: flex;
     font: ${defaultTheme.font.headerText};
     font-weight: 600;
