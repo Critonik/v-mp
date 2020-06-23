@@ -6,6 +6,7 @@ import { AppBlock } from './AppStyles';
 import MainPage from './components/MainPage/MainPage';
 import { Route, Switch } from 'react-router-dom';
 import DonatePage from './components/DonatePage/DonatePage';
+import PromoPage from './components/PromoPage/PromoPage';
 
 
 export interface ILinks {
@@ -13,6 +14,7 @@ export interface ILinks {
     setLink: (a?: any) => void;
     disable?: boolean;
     style?: React.CSSProperties
+    isPromo?: boolean;
 }
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
                 <Route exact path='/' component={MainPage} />
                 <Route exact path='/main/:category' component={MainPage} />
                 <Route exact path='/payment/donate' component={DonatePage} />
+                <Route exact path='/promo' component={PromoPage} />
+                <Route exact path='/promo/:promo' component={PromoPage} />
             </Switch>
         );
     };

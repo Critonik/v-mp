@@ -1,23 +1,24 @@
 import { Header } from '../HeaderBlock/HeaderLayout';
 import MainBlock from '../MainBlock/MainBlock';
-import Footer from '../Footer/Footer';
 import React, { useEffect, useReducer, useState } from 'react';
 import { initialState, reducer } from '../../stubs/linkStore';
 import { useHistory } from 'react-router';
 import { links } from '../NavigationBlock/NavitagionBlock';
+import FooterPromo from '../FooterPromo/FooterPromo';
 
-const MainPage: React.FC= () => {
+const PromoPage: React.FC = () => {
+
     const history = useHistory();
 
     const [state, dispatch] = useReducer(reducer, initialState);
-    const [loaded, isLoaded] = useState<boolean>(false)
+    const [loaded, isLoaded] = useState<boolean>(false);
 
     useEffect(() => {
         isLoaded(true);
     }, []);
 
     useEffect(() => {
-        const blockId = history.location.pathname.slice(6)
+        const blockId = history.location.pathname.slice(7)
         if (blockId || blockId !== '/') {
             const element = document.getElementById(`#${blockId}`) as HTMLElement;
             if (element) {
@@ -39,11 +40,11 @@ const MainPage: React.FC= () => {
 
     return (
         <>
-            <Header link={state.count} setLink={dispatch}/>
+            <Header isPromo={true} link={state.count} setLink={dispatch}/>
             <MainBlock/>
-            <Footer link={state.count} setLink={dispatch}/>
+            <FooterPromo link={state.count} setLink={dispatch}/>
         </>
     )
 };
 
-export default MainPage;
+export default PromoPage;

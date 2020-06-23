@@ -17,7 +17,7 @@ const VideoModal: React.FC<IVideoModal> = ({ closeAction, children}) => {
         return () => {
             document.removeEventListener('keydown', closeAction);
         };
-    },[]);
+    }, []); // eslint-disable-line
 
     return (
         <VideoWrapper>
