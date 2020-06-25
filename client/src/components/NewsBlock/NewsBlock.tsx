@@ -16,7 +16,6 @@ import {
 import defaultNewsPicture from '../../icons/defaultNewsPicture.svg';
 import convertTimestamp from '../../stubs/convertUnixTime';
 
-let url = 'https://api.vk.com/method/wall.get?owner_id=-23881761&count=3&access_token=28b6918028b6918028b691807328d1bc9a228b628b6918074b4350e3b30491336746bda&v=5.110';
 
 interface IVKImage {
     height: string;
@@ -44,7 +43,7 @@ const NewsBlock: React.FC = () => {
     const [vkData, setVkData] = useState<IPostDate[]>([]);
 
     useEffect(() => {
-        getDataFromServer(url).then((resolve) => setVkData(resolve.response.items));
+        getDataFromServer('/vk').then((resolve) => setVkData(resolve.response.items));
     }, []);
 
     const createNews = () => {

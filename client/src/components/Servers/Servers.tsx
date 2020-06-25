@@ -39,8 +39,8 @@ interface IConvertData {
     icon: string;
 }
 
-const firstServer = '/01.json?_=1592983784321';
-const secondServer = '/02.json?_=1592983784325';
+const firstServer = '/serverOne';
+const secondServer = '/serverTwo';
 
 
 const Servers: React.FC = () => {
