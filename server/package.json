@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node app.js",
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "forever-start": "forever start app.js",
+    "forever-stop": "forever stop app.js"
   },
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.4",
     "concurrently": "^5.2.0",
-    "config": "^3.3.1"
+    "config": "^3.3.1",
+    "forever": "^3.0.0"
   },
   "devDependencies": {
     "request-promise": "^4.2.5",
