@@ -1,6 +1,6 @@
 export const getDataFromServer = async (url: string, opt = 'GET') => {
     let response = await fetch(url, {
-        method: opt
+        method: opt,
     });
 
     return await response.json();

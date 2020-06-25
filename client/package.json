@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "proxy": "https://v-mp.ru/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -22,7 +23,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rimraf ./build && react-scripts build && rimraf ./build/**/*.map",
+    "postbuild": "rimraf build/**/*.map",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
