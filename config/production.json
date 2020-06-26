@@ -1,4 +1,4 @@
 {
-  "port": 443,
-  "baseUrl": "https://localhost:5000"
+  "port": 5000,
+  "baseUrl": "http://new.gtav.mp"
 }

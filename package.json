@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "cross-env NODE_ENV=production node app.js",
-    "server": "nodemon app.js",
-    "forever-start": "forever start app.js",
-    "forever-stop": "forever stop app.js",
+    "server": "nodemon NODE_ENV=development app.js",
+    "forever-start": "cross-env NODE_ENV=production forever start app.js",
+    "forever-stop": "cross-env NODE_ENV=production forever stop app.js",
     "client": "npm run start --prefix client",
     "client:install": "npm install --prefix client",
     "client:build": "npm run build --prefix client",
