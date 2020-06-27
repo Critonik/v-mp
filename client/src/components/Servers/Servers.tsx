@@ -39,8 +39,8 @@ interface IConvertData {
     icon: string;
 }
 
-const firstServer = '/serverOne';
-const secondServer = '/serverTwo';
+const firstServer = '/api/serverOne';
+const secondServer = '/api/serverTwo';
 
 
 const Servers: React.FC = () => {
@@ -80,13 +80,13 @@ const Servers: React.FC = () => {
                 icon: keyboard,
             });
             setServerOneData(result)
-        });
+        }).catch((e) => console.log(e));
         getDataFromServer(secondServer).then((resolve) => setServerTwoData(convertDataFromServer({
             serverData: resolve,
             count: 2,
             serverName: 'V-MP Server 02',
             icon: micro,
-        })));
+        }))).catch((e) => console.log(e));
         setLoaded(true);
     }, []);
 

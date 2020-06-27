@@ -43,7 +43,7 @@ const NewsBlock: React.FC = () => {
     const [vkData, setVkData] = useState<IPostDate[]>([]);
 
     useEffect(() => {
-        getDataFromServer('/vk').then((resolve) => setVkData(resolve.response.items));
+        getDataFromServer('/api/vk').then((resolve) => setVkData(resolve.response.items)).catch((e) => console.log(e));
     }, []);
 
     const createNews = () => {

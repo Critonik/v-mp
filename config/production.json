@@ -1,4 +1,4 @@
 {
-  "port": 5000,
-  "baseUrl": "http://new.gtav.mp"
+  "port": 80,
+  "baseUrl": "http://new.gtav.mp/"
 }
