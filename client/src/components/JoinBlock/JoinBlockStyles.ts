@@ -5,6 +5,7 @@ import { device } from '../../GlobalStyles/mediaBreakpoints';
 interface ISocialImage {
     socialColor: string;
 }
+const blockHeight = document.documentElement.clientHeight;
 
 export const JoinBlockSection = styled.section`
     display: flex;
@@ -13,6 +14,12 @@ export const JoinBlockSection = styled.section`
     align-items: center;
     background-color: #FBFBFB;
     padding: 43px 0 83px;
+    box-sizing: border-box;
+    
+     @media ${device.tabletM} {
+        height: ${blockHeight}px;
+        max-height: ${blockHeight}px;
+    }
 `;
 
 export const JoinBlockWrapper = styled.div`
@@ -27,8 +34,8 @@ export const JoinBlockWrapper = styled.div`
 
 export const JoinHeader = styled.h2`
     font: ${defaultTheme.font.linkText};
-    font-size: 72px;
-    line-height: 88px;
+    font-size: 21px;
+    line-height: 24px;
     color: ${defaultTheme.black_color};
     text-align: center;
     position: relative;
@@ -54,6 +61,10 @@ export const JoinHeader = styled.h2`
       width: 40%;
       background-color: #AD58F9;
     }
+    @media ${device.tabletM} {
+        font-size: 72px;
+        line-height: 88px;
+    }
 `;
 
 
@@ -77,15 +88,20 @@ export const OneSocialWrapper = styled.div`
     width: 100%;
     max-width: 176px;
     min-height: 333px;
+    margin-bottom: 10px;
 `
 
 export const SocialHead = styled.h3`
     margin: 0;
     text-align: center;
     font ${defaultTheme.font.sectionMontserratText};
-    font-size: 36.4px;
-    line-height: 44px;
+    font-size: 26.4px;
+    line-height: 29px;
     color: #000;
+    @media ${device.tabletM} {
+        font-size: 36.4px;
+        line-height: 44px;
+    }
 `;
 
 

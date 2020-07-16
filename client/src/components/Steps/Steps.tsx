@@ -57,7 +57,7 @@ const stepData: ISteps[] = [
 ];
 
 const Steps: React.FC = () => {
-
+    const blockHeight = document.documentElement.clientHeight;
     const [isVideo, openVideo] = useState<boolean>(false);
 
     const createSteps = (data: ISteps[]) => {
@@ -70,14 +70,16 @@ const Steps: React.FC = () => {
                         {item.stepTwo && <div className={'step-two'}>{item.stepTwo}</div>}
                         <DownloadButton><StepButtonText target={'_blank'} href={item.href} icon={item.icon}>{item.buttonText}</StepButtonText></DownloadButton>
                     </StepWrapper>
-                    <img loading={'lazy'} src={item.image} alt={item.title}/>
+                    <img className={'step-image'} loading={'lazy'} src={item.image} alt={item.title}/>
                 </CardWrapper>
             );
         });
     };
 
     return (
-        <StepsWrapper id={'#how'}>
+        <StepsWrapper
+            id={'#how'}
+        >
             <StepsHeader>
                 Как начать играть?
             </StepsHeader>
@@ -91,7 +93,9 @@ const Steps: React.FC = () => {
                     </ButtonText>
                 </Button>
             </ContentWrapper>
-            <StepsGuy loading={'lazy'} src={howtostart} alt={'guy'}/>
+            <StepsGuy loading={'lazy'} src={howtostart} alt={'guy'}
+                      style={{height: `${blockHeight}px`,
+                maxHeight: `${blockHeight}px`}}/>
             {isVideo &&
             <VideoModal
                 closeAction={() => openVideo(false)}>

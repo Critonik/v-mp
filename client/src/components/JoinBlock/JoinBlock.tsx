@@ -13,6 +13,7 @@ import {
     SocialImageWrapper,
     SubscribeButton
 } from './JoinBlockStyles';
+import { StepsWrapper } from '../Steps/StepsStyles';
 
 interface ISocial {
     title: string;
@@ -59,7 +60,9 @@ const JoinBlock: React.FC = () => {
     };
 
     return (
-        <JoinBlockSection>
+        <JoinBlockSection
+            id={'#join'}
+        >
             <JoinBlockWrapper>
                 <JoinHeader>Присоединяйтесь к нам</JoinHeader>
                 <SocialWrapper>

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import square from './icons/square.svg'
 
 export const AppBlock = styled.div`
     text-align: center;
@@ -7,9 +6,6 @@ export const AppBlock = styled.div`
     flex-direction: column;
     height: 100%;
     align-items: center;
-    background-image: url(${square});
-    background-position: center;
-    background-size: contain;
     overflow-y: auto;
     overflow-x: hidden;
 `;

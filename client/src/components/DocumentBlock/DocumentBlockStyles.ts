@@ -26,11 +26,17 @@ export const DocumentLink = styled.a`
     text-decoration: underline;
     color: ${defaultTheme.white_main};
     font: ${defaultTheme.font.headerText};
-    margin: 0 49px;
+    font-size: 15px;
+    line-height: 19px;
+    margin: 5 49px;
     &:link {
         color: ${defaultTheme.white_main};
     }
     &:visited {
         color: ${defaultTheme.white_main};
+    }
+    @media ${device.tabletM} {
+          font-size: 24px;
+          line-height: 29px;
     }
 `;

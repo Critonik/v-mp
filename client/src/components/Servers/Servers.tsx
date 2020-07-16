@@ -17,6 +17,7 @@ import {
 import keyboard from '../../icons/keyboard.svg';
 import micro from '../../icons/micro.svg';
 import { getDataFromServer } from '../../stubs/getDataFromServer';
+import { StepsWrapper } from '../Steps/StepsStyles';
 
 interface IDataFromServer {
     ServerName: string;
@@ -113,18 +114,24 @@ const Servers: React.FC = () => {
             </CurrentServerWrap>
         )
     }
+    const blockHeight = document.documentElement.clientHeight;
 
     return (
-        isLoaded ?
-        <ServerSectionWrapper id={'#serverlist'}>
+        <ServerSectionWrapper
+            id={'#serverlist'}
+        >
             <ServerHeader>Список серверов</ServerHeader>
             <ServersWrapper>
-                {createServers(serverOneData)}
-                <MiddleLine/>
-                {createServers(serverTwoData)}
+                {
+                    isLoaded &&
+                    <>
+                        {createServers(serverOneData)}
+                        <MiddleLine/>
+                        {createServers(serverTwoData)}
+                    </>
+                }
             </ServersWrapper>
         </ServerSectionWrapper>
-        : <></>
     );
 };
 

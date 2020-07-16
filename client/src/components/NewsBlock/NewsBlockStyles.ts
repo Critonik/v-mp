@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import square from '../../icons/square.svg'
 import { defaultTheme, scrollStyles } from '../../defaultTheme';
+import { device } from '../../GlobalStyles/mediaBreakpoints';
+const blockHeight = document.documentElement.clientHeight;
 
 export const NewsBlockSection = styled.section`
     display: flex;
@@ -11,17 +13,26 @@ export const NewsBlockSection = styled.section`
     background-position: center;
     background-size: cover;
     padding: 54px 0 161px;
-    
+    box-sizing: border-box;
     .news-image {
+        display: none;
         width: 281px;
         height: 241px;
+    }
+    
+ @media ${device.tabletM} {
+        height: ${blockHeight}px;
+        max-height: ${blockHeight}px;
+        .news-image {
+            display: block;
+        }
     }
 `;
 
 export const NewsHeader = styled.h2`
     font: ${defaultTheme.font.linkText};
-    font-size: 72px;
-    line-height: 88px;
+    font-size: 21px;
+    line-height: 24px;
     color: ${defaultTheme.black_color};
     text-align: center;
     position: relative;
@@ -32,7 +43,7 @@ export const NewsHeader = styled.h2`
         position: absolute;
         content: 'Новости';
         top: -12px;
-        left: 0px;
+        left: 0;
         width: 100%;
         height: 100%;
         -webkit-text-stroke: 0.5px  #AD58F9;
@@ -47,6 +58,10 @@ export const NewsHeader = styled.h2`
       left: 0;
       width: 30%;
       background-color: #AD58F9;
+    }
+    @media ${device.tabletM} {
+        font-size: 72px;
+        line-height: 88px;
     }
 `;
 
@@ -78,7 +93,6 @@ export const InnerOneNewsWrapper = styled.div`
     align-items: center;
     border-radius: 10px;
     border: 1px solid #AD58F9;
-    margin-left: 31px;
     position: relative;
     &:before {
         height: 2px;
@@ -89,6 +103,10 @@ export const InnerOneNewsWrapper = styled.div`
         position: absolute;
         left: -150px;
         content: '';
+    }
+    
+    @media ${device.tabletM} {
+        margin-left: 31px;
     }
 `;
 
@@ -112,21 +130,28 @@ export const HeadAndDateWrap = styled.div`
 export const OneNewsHead = styled.h3`
     margin: 0;
     font: ${defaultTheme.font.linkText};
-    font-size: 36px;
-    line-height: 44px;
     color: #AD58F9;
     text-align: left;
+    
+    @media ${device.tabletM} {
+        font-size: 36px;
+        line-height: 44px;
+    }
 `;
 
 export const DateField = styled.div`
     display: flex;
     align-items: center;
-    padding: 6px 33px;
+    padding: 3px 22px;
     font: ${defaultTheme.font.licenseKey};
     color: #000;
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 17px;
+    
+    @media ${device.tabletM} {
+        padding: 6px 33px;
+    }
 `;
 
 export const NewsText = styled.div`

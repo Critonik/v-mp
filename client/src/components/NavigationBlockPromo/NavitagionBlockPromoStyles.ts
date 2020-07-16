@@ -67,8 +67,8 @@ export const MobileMenuWrapper = styled.nav`
 export const MobileNavItem = styled(Link)`
     font: ${defaultTheme.font.headerTextTablet};
     font-weight: 500;
-    font-size: 38px;
-    line-height: 46px;
+    font-size: 24px;
+    line-height: 29px;
     color: ${defaultTheme.white_main};
     text-decoration: none;
     display: block;
@@ -82,7 +82,6 @@ export const MobileNavItem = styled(Link)`
     &:visited {
         color: ${defaultTheme.white_main};
     }
-    
 `;
 
 export const CloseMobileMenuIcon = styled.div`
@@ -93,7 +92,7 @@ export const CloseMobileMenuIcon = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     position: fixed;
-    right: 68px;
+    right: 38px;
     top: 12px;
 `;
 

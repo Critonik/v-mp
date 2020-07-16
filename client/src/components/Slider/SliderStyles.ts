@@ -31,9 +31,8 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     display: flex;
     flex-direction: column;
     position: relative;
-    min-height: 1080px;
-    justify-content: center;
     align-items: center;
+    justify-content: space-around;
     ${scrollStyles}
     
   
@@ -56,8 +55,7 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
 
 export const TabletBackground = styled.div`
     background-repeat: no-repeat;
-    background-size: 920px;
-    background-position: right top;
+    background-position: center bottom;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -80,6 +78,8 @@ export const SlideWrapper = styled.div`
     display: none;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
+    padding: 0 20px;
     &[data-visible = 'true'] {
         display: flex;
     }
@@ -121,33 +121,14 @@ export const SlideInfoWrapper = styled.div`
     height: inherit;
 `;
 
-export const SlideImage = styled.div`
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 20px;
-    right: 0;
-    opacity: 0.3;
-    max-height: 1300px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    @media ${device.laptop} {
-          width: 69%;
-    }
-    @media ${device.desktop} {
-        opacity: 1;
-        transform: translateX(26%);
-    }
-`;
-
 export const SlideHeader: StyledComponent<any, IHeaderProps> = styled('h2') <IHeaderProps>`
     font: ${defaultTheme.font.headerBoldText};
     color: ${defaultTheme.violet};
     text-align: left;
     position: relative;
     margin: 0 0 10px;
-    font-size: 64px;
-    line-height: 88px;
+    font-size: 17px;
+    line-height: 21px;
     &:before {
         position: absolute;
         content: '';
@@ -160,18 +141,38 @@ export const SlideHeader: StyledComponent<any, IHeaderProps> = styled('h2') <IHe
         background-color: ${defaultTheme.violet};
     }
     &:after {
-       z-index: -1;
-       position: absolute;
-       left: -11px;
-       top: -36px;
-       content: '${props => String(props.count)}';
-       font: ${defaultTheme.font.headerBoldText};
-       font-size: 128px;
-       line-height: 157px;
-       color: #EEEEEE;
-       width: 10px;
-       height: 38px;
+        z-index: -1;
+        position: absolute;
+        left: -11px;
+        top: -13px;
+        content: '${props => String(props.count)}';
+        font: ${defaultTheme.font.headerBoldText};
+        font-size: 32px;
+        line-height: 44px;
+        color: #EEEEEE;
+        width: 10px;
+        height: 38px;
     }
+    
+    @media ${device.tabletM} {
+        font-size: 64px;
+        line-height: 88px;
+        &:before {
+            left: -49px;
+            top: 7px;
+            width: 21px;
+            height: 21px;
+        }
+        &:after {
+           left: -11px;
+           top: -36px;
+           font-size: 128px;
+           line-height: 157px;
+           width: 10px;
+           height: 38px;
+        }
+    }
+    
     @media ${device.laptop} {
         font-size: 72px;
         line-height: 88px;
@@ -190,13 +191,15 @@ export const SlideHeader: StyledComponent<any, IHeaderProps> = styled('h2') <IHe
 
 export const SlideText = styled.div`
     font: ${defaultTheme.font.headerText};
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 14px;
+    line-height: 19px;
     font-weight: normal;
     text-align: left;
     max-width: 500px;
     padding-bottom: 40px;
     @media ${device.laptop} {
+        font-size: 24px;
+        line-height: 29px;
         max-width: 900px;
     }
 `;
@@ -206,7 +209,7 @@ export const LabelControlsWrapper = styled.div`
     flex-direction: row;
     width: 180px;
     justify-content: space-around;
-    margin: 150px auto 0;
+    margin: 0 auto;
     z-index: 100;
     
     @media ${device.laptop} {
@@ -297,31 +300,12 @@ export const Button: StyledComponent<any, IButtonProps> = styled('button') <IBut
      border: 1px solid ${props => props.bordercolor ? props.bordercolor : 'transparent'};
      border-radius: 13.9457px;
      display: flex;
+     justify-content: center;
      align-items: center;
      cursor: pointer;
      z-index: 10;
-     margin: ${props => props.margin ? props.margin : ' 0 27px 0 0'};
-     padding: ${props => props.padding ? props.padding : '30px 111px 30px 69px'};
+     width: 280px;
      height: ${props => props.minheight ? props.minheight : '89px'};
-`;
-
-export const ButtonText = styled.div`
-     position: relative;
-     text-align: left;
-     font ${defaultTheme.font.headerText};
-     font-weight: normal;
-     color: ${defaultTheme.white_main};
-        &:after {
-           position: absolute;
-           content: '';
-           width: 31px;
-           height: 31px;
-           top: -3px;
-           right: -40px;
-           background-image: url(${joystick});
-           background-position: center;
-           background-repeat: no-repeat;   
-        }
 `;
 
 export const ButtonVideoText = styled.div`
@@ -340,6 +324,30 @@ export const ButtonVideoText = styled.div`
            top: 3px;
            right: -28px;
            background-image: url(${play});
+           background-position: center;
+           background-repeat: no-repeat;   
+        }
+`;
+
+export const ButtonText = styled.div`
+     position: relative;
+     text-align: left;
+     font ${defaultTheme.font.headerText};
+     font-size: 21px;
+     font-weight: normal;
+     color: ${defaultTheme.white_main};
+     transform: translateX(-20px);
+     @media ${device.laptop} {
+        font-size: 24px;
+     }
+        &:after {
+           position: absolute;
+           content: '';
+           width: 31px;
+           height: 31px;
+           top: -3px;
+           right: -40px;
+           background-image: url(${joystick});
            background-position: center;
            background-repeat: no-repeat;   
         }

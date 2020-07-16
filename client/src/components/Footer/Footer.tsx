@@ -24,6 +24,14 @@ const links = [
         link: 'news',
     },
     {
+        text: 'Присоединяйся',
+        link: 'join',
+    },
+    {
+        text: 'О проекте',
+        link: 'footer',
+    },
+    {
         text: 'Донат',
         link: 'donate',
     },
@@ -80,9 +88,9 @@ const Footer: React.FC<ILinks> = ({link: propLink, style, setLink}) => {
 
     return (
         <>
-            <FooterBlock style={style}>
+            <FooterBlock id={'#footer'} style={style}>
                 <FooterWrapper>
-                    <Logo className={'footer-logo'} style={{width: '204px', height: '204px'}} src={Logotype} alt=''/>
+                    <Logo className={'footer-logo'} style={{width: '104px', height: '104px'}} src={Logotype} alt=''/>
                     <FooterNavItemWrapper>
                         {createLinks(links)}
                     </FooterNavItemWrapper>
@@ -90,8 +98,8 @@ const Footer: React.FC<ILinks> = ({link: propLink, style, setLink}) => {
                         Единственный в своём роде GTA 5 RP сервер с голосовым чатом и поддержкой всех версий игры.! Самый продвинутый игровой мод с большими возможностями для новичков и опытных игроков. 14 фракций с функционалом и более 10 работ, которые не дадут заскучать. Проект работает успешно уже 3 года!
                     </FooterInfo>
                 </FooterWrapper>
+                <DocumentBlock/>
             </FooterBlock>
-            <DocumentBlock/>
         </>
     );
 };
