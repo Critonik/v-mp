@@ -17,7 +17,6 @@ import {
 import keyboard from '../../icons/keyboard.svg';
 import micro from '../../icons/micro.svg';
 import { getDataFromServer } from '../../stubs/getDataFromServer';
-import { StepsWrapper } from '../Steps/StepsStyles';
 
 interface IDataFromServer {
     ServerName: string;
@@ -114,7 +113,6 @@ const Servers: React.FC = () => {
             </CurrentServerWrap>
         )
     }
-    const blockHeight = document.documentElement.clientHeight;
 
     return (
         <ServerSectionWrapper

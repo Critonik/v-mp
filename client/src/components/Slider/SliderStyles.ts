@@ -37,16 +37,18 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     
   
     @media ${device.laptop} {
-        justify-content: flex-end;
+        justify-content: center;
     }
     
     @media ${device.desktop} {
+        align-items: flex-start;
+    }
+    
+    @media ${device.ultra} {
         background-image: url(${props => props.tabletImage});
-        background-size: 1080px;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: right top;
-        justify-content: space-around;
-        align-items: flex-start;
         &:before {
             display: none;
         }
@@ -64,8 +66,17 @@ export const TabletBackground = styled.div`
     width: 100%;
     height: 100%;
     opacity: 0.5;
+    background-size: 100%;
+    
+    @media ${device.laptop} {
+        background-size: ${document.documentElement.clientHeight - 300}px;
+    }
     
     @media ${device.desktop} {
+        background-size: cover !important;
+    }
+    
+    @media ${device.ultra} {
         display: none;
     }
 `;
@@ -88,7 +99,7 @@ export const SlideWrapper = styled.div`
         justify-content: flex-start;
         width: 1200px;
         position: static;
-        margin: 0 auto 224px;
+        margin: 0 auto;
     }
     
     @media ${device.desktop} {
@@ -104,12 +115,10 @@ export const TextWrapper = styled.div`
     z-index: 100;
     @media ${device.laptop} {
         margin-left: 85px;
-        align-items: flex-end;
-        transform: translateY(30%);
+        align-items: flex-start;
     }
     @media ${device.desktop} {
         margin: auto 175px;
-        align-items: flex-start;
     }
 `;
 
@@ -218,6 +227,7 @@ export const LabelControlsWrapper = styled.div`
     }
     
     @media ${device.desktop} {
+        margin-top: 5%;
         margin-bottom: 0;
     }
 `;

@@ -110,15 +110,11 @@ export const NavItem = styled(Link)`
     &:visited {
         color: ${defaultTheme.black_color};
     }
-    
-    @media ${device.laptop} {
-        font-size: 16px;
-        line-height: 19px;
-    }
+   
     
     @media ${device.desktop} {
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 17px;
+        line-height: 23px;
     }
      
 `;

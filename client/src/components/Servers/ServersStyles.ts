@@ -22,7 +22,7 @@ export const ServerSectionWrapper = styled.section`
     padding-top: 48px;
     box-sizing: border-box;
     
-    @media ${device.tabletM} {
+    @media ${device.laptop} {
         height: ${blockHeight}px;
         max-height: ${blockHeight}px;
     }
@@ -71,6 +71,9 @@ export const ServersWrapper = styled.div`
     align-items: center;
     min-height: 376px;
     
+    @media ${device.laptop} {
+        height: 100%;
+    }
     @media ${device.desktop} {
         flex-direction: row;
     }

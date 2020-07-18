@@ -27,15 +27,10 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     display: flex;
     flex-direction: column;
     position: relative;
-    min-height: 1080px;
-    justify-content: center;
     align-items: center;
+    justify-content: space-around;
     ${scrollStyles}
-    
-  
-    @media ${device.laptop} {
-        justify-content: flex-end;
-    }
+ 
     
     @media ${device.desktop} {
         background-image: url(${props => props.tabletImage});
@@ -45,6 +40,10 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
         justify-content: space-around;
         align-items: flex-start;
         &:before {
+            display: none;
+        }
+        
+        & > div#mainprlx {
             display: none;
         }
     }
@@ -57,6 +56,8 @@ export const SlideWrapper = styled.div`
     display: none;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
+    padding: 0 20px;
     &[data-visible = 'true'] {
         display: flex;
     }
@@ -65,7 +66,7 @@ export const SlideWrapper = styled.div`
         justify-content: flex-start;
         width: 1200px;
         position: static;
-        margin: 0 auto 224px;
+        margin: 0 auto;
     }
     
     @media ${device.desktop} {
@@ -79,6 +80,9 @@ export const TextWrapper = styled.div`
     position: relative;
     align-items: center;
     z-index: 100;
+    @media ${device.tabletM} {
+        align-items: flex-start;
+    }
     @media ${device.laptop} {
         margin-left: 85px;
         align-items: flex-end;
@@ -102,10 +106,41 @@ export const SlideHeader: StyledComponent<any, any> = styled('h2')`
     color: ${defaultTheme.violet};
     text-align: left;
     position: relative;
-    max-width: 454px;
     margin: 0 0 10px;
-    font-size: 64px;
-    line-height: 88px;
+    @media ${device.laptop} {
+        font-size: 72px;
+        line-height: 88px;
+        font-weight: bold;
+        &:before {
+          top: 40px;
+        }
+        &:after {
+            font-size: 144px;
+            line-height: 176px;
+            font-weight: bold;
+            top: -50px;
+        }
+    }
+    
+        @media ${device.tabletM} {
+        font-size: 64px;
+        line-height: 88px;
+        &:before {
+            left: -49px;
+            top: 7px;
+            width: 21px;
+            height: 21px;
+        }
+        &:after {
+           left: -11px;
+           top: -36px;
+           font-size: 128px;
+           line-height: 157px;
+           width: 10px;
+           height: 38px;
+        }
+    }
+    
     @media ${device.laptop} {
         font-size: 72px;
         line-height: 88px;
@@ -124,13 +159,15 @@ export const SlideHeader: StyledComponent<any, any> = styled('h2')`
 
 export const SlideText = styled.div`
     font: ${defaultTheme.font.headerText};
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 14px;
+    line-height: 19px;
     font-weight: normal;
     text-align: left;
     max-width: 500px;
     padding-bottom: 40px;
     @media ${device.laptop} {
+        font-size: 24px;
+        line-height: 29px;
         max-width: 797px;
     }
 `;
@@ -147,6 +184,7 @@ export const ButtonWrapper = styled.div`
     @media ${device.laptop} {
          flex-direction: row;
          align-items: center;
+         align-self: flex-start;
      }
 `;
 
@@ -158,12 +196,12 @@ export const Button: StyledComponent<any, IButtonProps> = styled('button') <IBut
      display: flex;
      justify-content: center;
      align-items: center;
+     cursor: pointer;
      z-index: 10;
-     width: 353px;
-     margin: ${props => props.margin ? props.margin : ' 0 27px 0 0'};
-     padding: ${props => props.padding ? props.padding : '30px 0'};
+     width: 280px;
      height: ${props => props.minheight ? props.minheight : '89px'};
      align-self: flex-start;
+     outline: none;
      @media ${device.laptop} {
           transform: translateY(-40%);
           align-self: inherit;
@@ -195,8 +233,8 @@ export const CopyPromoWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 168px;
     max-width: 500px;
+   margin-bottom: 10px;
 `;
 
 export const PromoInstruction = styled.p`
@@ -205,7 +243,10 @@ export const PromoInstruction = styled.p`
     color: #000;
     font: ${defaultTheme.font.headerText};
     font-weight: 600;
-    width: 447px;
+    
+    @media ${device.tabletM} {
+        width: 447px;
+    }
 `;
 
 export const InputWrapper = styled.span`
@@ -233,7 +274,7 @@ export const InputWrapper = styled.span`
 `;
 
 export const PromoField = styled.input`
-    width: 352px;
+    width: 262px;
     padding: 16px 0;
     height: 100%;
     display: flex;
@@ -246,6 +287,10 @@ export const PromoField = styled.input`
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 10px 0 0 10px;
+    
+    @media ${device.tabletM} {
+        width: 352px;
+    }
 `;
 
 export const PromoDesc = styled.div`

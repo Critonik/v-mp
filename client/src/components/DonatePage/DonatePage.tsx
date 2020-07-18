@@ -8,7 +8,7 @@ import {
     ButtonText,
     DonateForm,
     DonateFormWrapper,
-    DonateHeader,
+    DonateHeader, DonatePageBody,
     DonatePageWrap,
     LinkText,
     LinkToMainPage,
@@ -66,8 +66,8 @@ const DonatePage: React.FC = () => {
     }
 
     return (
-        <>
-            <Header disable={true} link={4} setLink={dispatch}/>
+        <DonatePageBody>
+            <Header disable={true} link={6} setLink={dispatch}/>
                 <DonatePageWrap>
                     <DonateFormWrapper>
                         <DonateForm onSubmit={onSubmit}>
@@ -144,8 +144,8 @@ const DonatePage: React.FC = () => {
                         <BackImage src={donateBg} alt={''}/>
                     </DonateFormWrapper>
                 </DonatePageWrap>
-            <Footer style={{backgroundColor: '#FBFBFB', backgroundImage: 'none'}} link={4} setLink={dispatch}/>
-        </>
+            <Footer style={{backgroundColor: '#FBFBFB', backgroundImage: 'none'}} link={6} setLink={dispatch}/>
+        </DonatePageBody>
     );
 };
 

@@ -94,7 +94,7 @@ const Steps: React.FC = () => {
                 </Button>
             </ContentWrapper>
             <StepsGuy loading={'lazy'} src={howtostart} alt={'guy'}
-                      style={{height: `${blockHeight}px`,
+                      style={{height: `${blockHeight - 200}px`,
                 maxHeight: `${blockHeight}px`}}/>
             {isVideo &&
             <VideoModal

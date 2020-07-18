@@ -26,7 +26,7 @@ const PromoPage: React.FC = () => {
                 const sectionIndex = links.findIndex(item => item.link === blockId);
                 if (yPos && sectionIndex !== -1) {
                     window.scrollTo({
-                        top: yPos,
+                        top: yPos + window.pageYOffset,
                         behavior: 'smooth',
                     });
                     dispatch({

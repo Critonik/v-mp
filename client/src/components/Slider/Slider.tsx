@@ -70,7 +70,7 @@ export const Slider: React.FC = () => {
             document.removeEventListener('mousemove', parlx);
             document.removeEventListener('mousemove', parlxMain);
         };
-    }, []);
+    }, []); // eslint-disable-line
     
 
     const parlx = (e: MouseEvent) => {

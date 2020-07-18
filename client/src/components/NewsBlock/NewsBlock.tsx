@@ -15,7 +15,6 @@ import {
 } from './NewsBlockStyles';
 import defaultNewsPicture from '../../icons/defaultNewsPicture.svg';
 import convertTimestamp from '../../stubs/convertUnixTime';
-import { HeaderTag } from '../HeaderBlock/HeaderLayoutStyles';
 
 
 interface IVKImage {
@@ -40,7 +39,6 @@ interface IPostDate {
 
 
 const NewsBlock: React.FC = () => {
-    const blockHeight = document.documentElement.clientHeight;
     const [vkData, setVkData] = useState<IPostDate[]>([]);
 
     useEffect(() => {

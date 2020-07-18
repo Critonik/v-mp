@@ -26,7 +26,7 @@ export const StepsWrapper = styled.section`
     box-sizing: border-box;
     overflow-y: auto;
     
-    @media ${device.tabletM} {
+    @media ${device.laptop} {
         height: ${blockHeight}px;
         max-height: ${blockHeight}px;
     }
@@ -74,8 +74,12 @@ export const StepsHeader = styled.h2`
       background-color: #AD58F9;
     }
     @media ${device.tabletM} {
-        font-size: 72px;
-        line-height: 88px;
+        font-size: 62px;
+        line-height: 78px;
+    }
+    
+    @media ${device.desktop} {
+        margin-bottom: 10px;
     }
 `;
 

@@ -20,7 +20,7 @@ export const NewsBlockSection = styled.section`
         height: 241px;
     }
     
- @media ${device.tabletM} {
+ @media ${device.laptop} {
         height: ${blockHeight}px;
         max-height: ${blockHeight}px;
         .news-image {
@@ -62,6 +62,7 @@ export const NewsHeader = styled.h2`
     @media ${device.tabletM} {
         font-size: 72px;
         line-height: 88px;
+        max-height: 90px;
     }
 `;
 

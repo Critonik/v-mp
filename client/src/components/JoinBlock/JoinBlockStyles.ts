@@ -16,7 +16,7 @@ export const JoinBlockSection = styled.section`
     padding: 43px 0 83px;
     box-sizing: border-box;
     
-     @media ${device.tabletM} {
+     @media ${device.laptop} {
         height: ${blockHeight}px;
         max-height: ${blockHeight}px;
     }
@@ -30,6 +30,9 @@ export const JoinBlockWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    @media ${device.laptop} {
+        height: 100%;
+    }
 `;
 
 export const JoinHeader = styled.h2`
@@ -62,8 +65,8 @@ export const JoinHeader = styled.h2`
       background-color: #AD58F9;
     }
     @media ${device.tabletM} {
-        font-size: 72px;
-        line-height: 88px;
+        font-size: 52px;
+        line-height: 78px;
     }
 `;
 
@@ -77,6 +80,12 @@ export const SocialWrapper = styled.div`
     @media ${device.laptop} {
         flex-direction: row;
         min-width: 1082px;
+        height: 100%;
+        align-items: flex-start;
+        
+        & > div:nth-child(2) {
+            align-self: flex-end;
+        }
     }
 `;
 

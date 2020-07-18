@@ -17,15 +17,16 @@ const MainPage: React.FC= () => {
     }, []);
 
     useEffect(() => {
-        const blockId = history.location.pathname.slice(6)
+        const blockId = history.location.pathname.slice(6);
         if (blockId || blockId !== '/') {
             const element = document.getElementById(`#${blockId}`) as HTMLElement;
             if (element) {
                 const yPos = element.getBoundingClientRect().top;
                 const sectionIndex = links.findIndex(item => item.link === blockId);
+                console.log(yPos);
                 if (yPos && sectionIndex !== -1) {
                     window.scrollTo({
-                        top: yPos,
+                        top: yPos + window.pageYOffset,
                         behavior: 'smooth',
                     });
                     dispatch({

@@ -9,6 +9,10 @@ export const DocumentBlockSection = styled.section`
     align-items: center;
     background-color: #171717;
     padding: 18px 0;
+    
+    @media ${device.desktop} {
+        padding: 18px 10px;
+    }
 `;
 
 export const DocumentWrapper = styled.div`
@@ -19,6 +23,7 @@ export const DocumentWrapper = styled.div`
     
     @media ${device.desktop} {
         flex-direction: row;
+        width: 100%;
     }
 `;
 

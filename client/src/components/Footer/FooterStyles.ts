@@ -34,6 +34,7 @@ export const FooterWrapper = styled.div`
     
     @media ${device.laptop} {
         flex-direction: row;
+        width: 100%;
     }
 `;
 
@@ -48,14 +49,14 @@ export const FooterNavItemWrapper = styled.nav`
     @media ${device.laptop} {
          margin-top: 0;
          margin-bottom: 0;
-         margin-right: 150px;
+         margin-right: 100px;
+         align-items: flex-start;
     }
     
     @media ${device.desktop} {
          flex-wrap: wrap;
          max-height: 205px;
-         align-items: flex-start;
-         margin-right: 150px;
+         margin-right: auto;
     }
 `;
 
@@ -78,7 +79,7 @@ export const NavItem = styled(Link)`
     
     @media ${device.desktop} {
         margin-bottom: 33px;
-        margin-right: 150px;
+        margin-right: 50px;
     }
 `;
 
@@ -94,5 +95,10 @@ export const FooterInfo = styled.p`
     
     @media ${device.laptop} {
       text-align: left;
+    }
+    
+    @media ${device.desktop} {
+      font-size: 24px;
+      line-height: 29px;
     }
 `;

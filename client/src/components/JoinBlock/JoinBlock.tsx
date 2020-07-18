@@ -13,7 +13,6 @@ import {
     SocialImageWrapper,
     SubscribeButton
 } from './JoinBlockStyles';
-import { StepsWrapper } from '../Steps/StepsStyles';
 
 interface ISocial {
     title: string;
