@@ -10,39 +10,13 @@ import {
     CloseMobileMenuIcon
 } from './NavitagionBlockPromoStyles';
 import { ILinks } from '../../App';
+import {links} from "../NavigationBlock/NavitagionBlock";
 
 export interface ILinkData {
     text: string;
     link: string;
 }
 
-
-export const links = [
-    {
-        text: 'Главная',
-        link: 'main',
-    },
-    {
-        text: 'Как начать играть?',
-        link: 'how',
-    },
-    {
-        text: 'Список серверов',
-        link: 'serverlist',
-    },
-    {
-        text: 'Новости',
-        link: 'news',
-    },
-    {
-        text: 'Донат',
-        link: 'donate',
-    },
-    {
-        text: 'Форум',
-        link: 'https://forum.v-mp.ru/',
-    },
-];
 
 const NavitagionBlockPromo: React.FC<ILinks> = ({link: propLink, setLink, disable}) => {
 
@@ -154,7 +128,13 @@ const NavitagionBlockPromo: React.FC<ILinks> = ({link: propLink, setLink, disabl
                 {createLinks(links)}
             </NavItemWrapper>
             <BurgerMenu onClick={openMobileMenu}/>
-            {isOpen && <MobileMenuWrapper><CloseMobileMenuIcon onClick={closeMobileMenu}/>{createMobileLinks(links)}</MobileMenuWrapper>}
+            {
+                isOpen &&
+                <MobileMenuWrapper>
+                    <CloseMobileMenuIcon onClick={closeMobileMenu}/>
+                    {createMobileLinks(links)}
+                </MobileMenuWrapper>
+            }
         </NavBlockWrapper>
     );
 };

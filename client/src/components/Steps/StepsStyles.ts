@@ -11,6 +11,7 @@ interface IButtonProps {
     icon: string;
 }
 
+const blockHeight = document.documentElement.clientHeight;
 export const StepsWrapper = styled.section`
     display: flex;
     flex-direction: column;
@@ -22,6 +23,13 @@ export const StepsWrapper = styled.section`
     margin: 0 auto;
     ${scrollStyles};
     padding-top: 48px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    
+    @media ${device.desktop} {
+        height: ${blockHeight}px;
+        max-height: ${blockHeight}px;
+    }
 `;
 
 export const StepsGuy = styled.img`
@@ -37,14 +45,14 @@ export const StepsGuy = styled.img`
 
 export const StepsHeader = styled.h2`
     font: ${defaultTheme.font.linkText};
-    font-size: 72px;
-    line-height: 88px;
     color: ${defaultTheme.black_color};
     text-align: center;
     position: relative;
-    margin: 0 auto 152px;
+    margin: 0 auto;
     max-width: 730px;
     flex: 1 1 auto;
+    font-size: 21px;
+    line-height: 24px;
     &:before {
         position: absolute;
         content: 'Как начать играть?';
@@ -65,6 +73,14 @@ export const StepsHeader = styled.h2`
       width: 30%;
       background-color: #AD58F9;
     }
+    @media ${device.tabletM} {
+        font-size: 62px;
+        line-height: 78px;
+    }
+    
+    @media ${device.desktop} {
+        margin-bottom: 10px;
+    }
 `;
 
 export const ContentWrapper = styled.div`
@@ -82,13 +98,25 @@ export const CardWrapper = styled.div`
     justify-content: space-between;
     text-align: left;
     padding: 20px 26px;
-    margin-left: 92px;
-    margin-bottom: 75px;
+    margin-bottom: 10px;
+    width: 100%;
     max-width: 508px;
+    
+    .step-image {
+        display: none;
+    }
+    
+    @media ${device.tabletM} {
+        .step-image {      
+            display: block;
+        }
+    }
     
     .step-one {
        font: ${defaultTheme.font.headerText};
        color: ${defaultTheme.black_color};
+       font-size: 21px;
+       line-height: 24px;
        margin-bottom: 2px;
     }
     .step-two {
@@ -96,12 +124,25 @@ export const CardWrapper = styled.div`
        color: ${defaultTheme.black_color};
        text-decoration: underline;
     }
+    
+    @media ${device.tabletM} {
+        margin-left: 92px;
+        margin-bottom: 75px;
+        
+        .step-one {
+            font: ${defaultTheme.font.headerText};
+            color: ${defaultTheme.black_color};
+            margin-bottom: 2px;
+        }
+    }
 `;
 
 export const StepWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    flex-basis: 50%;
+    @media ${device.tabletM} {
+        flex-basis: 50%;
+    }
 `;
 
 export const StepHeader: StyledComponent<any, IHeaderProps> = styled('h2') <IHeaderProps>`
@@ -110,12 +151,14 @@ export const StepHeader: StyledComponent<any, IHeaderProps> = styled('h2') <IHea
     text-align: left;
     position: relative;
     margin: 0 0 10px;
-   
+    font-size: 21px;
+    line-height: 24px;
+    box-sizing: border-box;
     &:after {
        z-index: -1;
        position: absolute;
        left: -11px;
-       top: 0;
+       top: -8px;
        content: '${props => String(props.count)}';
        font: ${defaultTheme.font.headerBoldText};
        font-size: 41px;
@@ -124,6 +167,7 @@ export const StepHeader: StyledComponent<any, IHeaderProps> = styled('h2') <IHea
        height: 38px;
     }
     @media ${device.laptop} {
+        font-size: 31px;
         line-height: 48px;
         &:before {
             width: 31px;
@@ -195,10 +239,13 @@ export const Button = styled.button`
      height: 71px;
      display: flex;
      align-items: center;
-     padding: 20px 50px 20px 30px;
      z-index: 10;
-     margin-left: 92px;
      cursor: pointer;
+     width: 280px;
+     margin: 0 auto;
+     @media ${device.tabletM} {
+          margin: 0 0 0 92px;
+     }
 `;
 
 export const ButtonText = styled.div`

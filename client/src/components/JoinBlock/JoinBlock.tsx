@@ -59,7 +59,9 @@ const JoinBlock: React.FC = () => {
     };
 
     return (
-        <JoinBlockSection>
+        <JoinBlockSection
+            id={'#join'}
+        >
             <JoinBlockWrapper>
                 <JoinHeader>Присоединяйтесь к нам</JoinHeader>
                 <SocialWrapper>

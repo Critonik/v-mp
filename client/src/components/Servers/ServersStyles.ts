@@ -8,11 +8,11 @@ interface IHeaderProps {
     iconWidth: string;
     iconHeight: string;
 }
+const blockHeight = document.documentElement.clientHeight;
 
 export const ServerSectionWrapper = styled.section`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
@@ -20,19 +20,24 @@ export const ServerSectionWrapper = styled.section`
     margin: 0 auto;
     ${scrollStyles};
     padding-top: 48px;
+    box-sizing: border-box;
+    
+    @media ${device.laptop} {
+        height: ${blockHeight}px;
+        max-height: ${blockHeight}px;
+    }
 `;
 
 
 export const ServerHeader = styled.h2`
     font: ${defaultTheme.font.linkText};
-    font-size: 72px;
-    line-height: 88px;
     color: ${defaultTheme.black_color};
     text-align: center;
     position: relative;
-    margin: 0 auto 152px;
+    margin: 0 auto 30px;
     max-width: 730px;
-    flex: 1 1 auto;
+    font-size: 21px;
+    line-height: 24px;
     &:before {
         position: absolute;
         content: 'Список серверов';
@@ -53,6 +58,10 @@ export const ServerHeader = styled.h2`
       width: 30%;
       background-color: #AD58F9;
     }
+    @media ${device.tabletM} {
+        font-size: 72px;
+        line-height: 88px;
+    }
 `;
 
 export const ServersWrapper = styled.div`
@@ -62,6 +71,9 @@ export const ServersWrapper = styled.div`
     align-items: center;
     min-height: 376px;
     
+    @media ${device.laptop} {
+        height: 100%;
+    }
     @media ${device.desktop} {
         flex-direction: row;
     }
@@ -72,8 +84,12 @@ export const CurrentServerWrap = styled.div`
     flex-direction: column;
     align-items: stretch;
     margin-bottom: 30px;
-    min-width: 592px;
+    min-width: 292px;
     position: relative;
+    
+    @media ${device.tabletM} {
+        min-width: 592px;
+    }
 `;
 
 export const ServerRow = styled.div`
@@ -87,16 +103,23 @@ export const ServerNum = styled.div`
     background: linear-gradient(129.95deg, #AD58F9 0%, #4E8EF3 100.54%);
     font: ${defaultTheme.font.linkText};
     color: ${defaultTheme.white_main};
-    font-size: 64px;
-    line-height: 78px;
+    font-size: 18px;
+    line-height: 21px;
     text-align: center;
-    height: 108px;
-    width: 108px;
+    height: 34px;
+    width: 34px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 13px;
     margin-right: 35px;
+    
+    @media ${device.tabletM} {
+        font-size: 64px;
+        line-height: 78px;
+        height: 108px;
+        width: 108px;
+    }
 `;
 
 export const ServerNameWrap = styled.div`
@@ -110,12 +133,12 @@ export const ServerNameWrap = styled.div`
 
 export const ServerName: StyledComponent<any, IHeaderProps> = styled('h3') <IHeaderProps>`
     font: ${defaultTheme.font.headerBoldText};
-    font-size: 48px;
-    line-height: 59px;
+    font-size: 22px;
+    line-height: 26px;
     margin: 0;
     &:after {
         position: absolute;
-        right: -60px;
+        right: 0;
         top: 2px;
         content: '';
         width: 58px;
@@ -124,22 +147,39 @@ export const ServerName: StyledComponent<any, IHeaderProps> = styled('h3') <IHea
         background-repeat: no-repeat;
         background-position: center;
     }
+    
+    @media ${device.tabletM} {
+        font-size: 48px;
+        line-height: 59px;
+        &:after {
+            right: -60px;
+        }
+    }
 `;
 
 export const PlayerCount = styled.p`
     font: ${defaultTheme.font.headerBoldText};
-    line-height: 24px;
-    font-size: 29px;
+    line-height: 16px;
+    font-size: 19px;
     color: #000;
     margin: 0 0 10px;
+    @media ${device.tabletM} {
+      line-height: 24px;
+      font-size: 29px;
+    }
 `;
 
 export const ProgressBar = styled.div`
     height: 17px;
-    width: 447px;
+    width: 257px;
     background: rgba(223, 223, 223, 0.41);
     border-radius: 5px;
     position: relative;
+    
+    @media ${device.tabletM} {
+        width: 447px;
+    }
+    
 `;
 
 const animations = keyframes`
@@ -176,9 +216,8 @@ export const ConnectButton = styled.button`
 
 export const MiddleLine = styled.div`
     background-color: #AD58F9;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='15' stroke-dasharray='2%2c 6' stroke-dashoffset='22' stroke-linecap='butt'/%3e%3c/svg%3e");
     height: 1px;
-    width: 177px;
+    width: 100%;
     margin-bottom: 10px;
     
     @media ${device.desktop} {

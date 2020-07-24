@@ -39,7 +39,6 @@ interface IPostDate {
 
 
 const NewsBlock: React.FC = () => {
-
     const [vkData, setVkData] = useState<IPostDate[]>([]);
 
     useEffect(() => {
@@ -69,9 +68,11 @@ const NewsBlock: React.FC = () => {
     };
 
     return (
-      <NewsBlockSection id={'#news'}>
+      <NewsBlockSection
+          id={'#news'}
+      >
           <NewsHeader>Новости</NewsHeader>
-          <NewsWrapper>
+          <NewsWrapper id={'NewsWrapper'}>
               {createNews()}
               <NewsLink href={'https://vk.com/gta5m'} target="_blank">Читать другие новости</NewsLink>
           </NewsWrapper>

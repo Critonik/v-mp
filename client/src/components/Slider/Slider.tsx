@@ -11,7 +11,8 @@ import {
     SliderLabels,
     SliderSection,
     SlideText,
-    SlideWrapper, TabletBackground,
+    SlideWrapper,
+    TabletBackground,
     TextWrapper
 } from './SliderStyles';
 import slide0 from '../../icons/slide0.png';
@@ -60,7 +61,7 @@ export const Slider: React.FC = () => {
 
     const [slide, setSlide] = useState<number>(0);
     const [isVideo, openVideo] = useState<boolean>(false);
-
+    const mobile = document.documentElement.clientWidth;
 
     useEffect(() => {
         document.addEventListener('mousemove', parlx);
@@ -69,10 +70,11 @@ export const Slider: React.FC = () => {
             document.removeEventListener('mousemove', parlx);
             document.removeEventListener('mousemove', parlxMain);
         };
-    }, []);
+    }, []); // eslint-disable-line
     
 
     const parlx = (e: MouseEvent) => {
+        if (mobile < 1024) return;
         const elem = document.querySelectorAll("#parallax");
         // Magic happens here
         let _w = window.innerWidth / 2;
@@ -92,6 +94,7 @@ export const Slider: React.FC = () => {
     };
 
     const parlxMain = (e: MouseEvent) => {
+        if (mobile < 1024) return;
         const elem = document.querySelectorAll("#mainprlx");
         // Magic happens here
         let _w = window.innerWidth;
@@ -133,7 +136,12 @@ export const Slider: React.FC = () => {
                                     {item.buttonText}
                                 </ButtonText>
                             </Button>
-                            <Button onClick={() => openVideo(true)} backcolor={'transparent'} bordercolor={'#171717'} minheight={'52px'} padding={'15px 64px 15px 32px'}>
+                            <Button
+                                onClick={() => openVideo(true)}
+                                backcolor={'transparent'}
+                                bordercolor={'#171717'}
+                                minheight={'52px'}
+                                padding={'15px 64px 15px 32px'}>
                                 <ButtonVideoText>
                                     {item.playButtonText}
                                 </ButtonVideoText>
@@ -158,7 +166,10 @@ export const Slider: React.FC = () => {
 
     return (
         <SliderSection id={'mainprlx'} tabletImage={cardInfo[slide].image} className='SliderSection' >
-            <TabletBackground id={'mainprlx'} style={{backgroundImage: `url(${cardInfo[slide].image})`}}/>
+            <TabletBackground
+                id={'mainprlx'}
+                style={{backgroundImage: `url(${cardInfo[slide].image})`,
+                backgroundSize: `${document.documentElement.clientHeight}px`}}/>
             {renderCard(cardInfo)}
             <LabelControlsWrapper>
                 {renderSliderLabel(cardInfo.length)}

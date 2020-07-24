@@ -13,7 +13,7 @@ export const FooterBlock = styled.footer`
     background-image: url(${square});
     background-position: center;
     background-size: cover;
-    padding: 73px 0;
+    box-sizing: border-box;
     
     @media ${device.desktop} {
         .footer-logo {
@@ -29,9 +29,12 @@ export const FooterWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0;
+    box-sizing: border-box;
     
     @media ${device.laptop} {
         flex-direction: row;
+        width: 100%;
     }
 `;
 
@@ -41,19 +44,19 @@ export const FooterNavItemWrapper = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 20px 0;
     
     @media ${device.laptop} {
          margin-top: 0;
          margin-bottom: 0;
-         margin-right: 150px;
+         margin-right: 100px;
+         align-items: flex-start;
     }
     
     @media ${device.desktop} {
          flex-wrap: wrap;
          max-height: 205px;
-         align-items: flex-start;
-         margin-right: 150px;
+         margin-right: auto;
     }
 `;
 
@@ -76,7 +79,7 @@ export const NavItem = styled(Link)`
     
     @media ${device.desktop} {
         margin-bottom: 33px;
-        margin-right: 150px;
+        margin-right: 50px;
     }
 `;
 
@@ -86,11 +89,16 @@ export const FooterInfo = styled.p`
     text-align: center;
     font: ${defaultTheme.font.headerTextTablet};
     color: ${defaultTheme.black_color};
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 15px;
+    line-height: 19px;
     max-width: 638px;
     
     @media ${device.laptop} {
       text-align: left;
+    }
+    
+    @media ${device.desktop} {
+      font-size: 24px;
+      line-height: 29px;
     }
 `;

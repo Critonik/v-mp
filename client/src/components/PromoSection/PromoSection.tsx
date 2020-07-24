@@ -20,6 +20,7 @@ import { TabletBackground } from '../Slider/SliderStyles';
 
 export const PromoSection: React.FC = () => {
 
+    const mobile = document.documentElement.clientWidth;
 
     useEffect(() => {
         document.addEventListener('mousemove', parlx);
@@ -28,9 +29,10 @@ export const PromoSection: React.FC = () => {
             document.removeEventListener('mousemove', parlx);
             document.removeEventListener('mousemove', parlxMain);
         };
-    }, []);
+    }, []); // eslint-disable-line
 
     const parlx = (e: MouseEvent) => {
+        if (mobile < 1024) return;
         const elem = document.querySelectorAll("#parallax");
         // Magic happens here
         let _w = window.innerWidth / 2;
@@ -50,6 +52,7 @@ export const PromoSection: React.FC = () => {
     };
 
     const parlxMain = (e: MouseEvent) => {
+        if (mobile < 1024) return;
         const elem = document.querySelectorAll("#mainprlx");
         // Magic happens here
         let _w = window.innerWidth;
@@ -86,7 +89,7 @@ export const PromoSection: React.FC = () => {
 
 
     return (
-        <SliderSection id={'mainprlx'} tabletImage={promoBg} className='SliderSection' >
+        <SliderSection id={'mainprlx'} tabletImage={promoBg} className='SliderSection'>
             <TabletBackground id={'mainprlx'} style={{backgroundImage: `url(${promoBg})`}}/>
             <SlideWrapper data-visible={true}>
                 <TextWrapper>

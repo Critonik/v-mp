@@ -8,6 +8,18 @@ interface IInputWrapper {
     icon: string;
 }
 
+export const DonatePageBody = styled.span`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    & > header {
+        height: auto !important;
+        max-height: none !important; 
+        background: transparent;
+    }
+`;
+
 export const DonatePageWrap = styled.div`
     height: 100%;
     width: 100%;
@@ -61,9 +73,13 @@ export const DonateHeader = styled('h2')`
     text-align: left;
     position: relative;
     margin: 0;
-    font-size: 48px;
-    line-height: 59px;
+
     font-weight: bold;
+    
+    @media ${device.tabletM} {
+        font-size: 48px;
+        line-height: 59px;
+    }
 `;
 
 export const Button = styled.button`
@@ -76,10 +92,18 @@ export const Button = styled.button`
      z-index: 10;
      padding: 27px 0;
      height: 84px;
-     min-width: 472px;
+     width: 100%;
      margin-top: 32px;
      &:disabled {
         opacity: 0.5;
+     }
+     
+     @media ${device.tabletM} {
+        min-width: 472px;
+     }
+     
+     @media ${device.desktop} {
+        max-width: 472px;
      }
 `;
 
@@ -98,7 +122,15 @@ export const DonateForm = styled.form`
     max-height: 700px;
     max-width: 560px;
     align-items: flex-start;
-    margin-left: 50px;
+    width: 100%;
+    
+    @media ${device.tabletM} {
+        margin-left: 50px;
+    }
+    
+    @media ${device.laptop} {
+        width: auto;
+    }
 `;
 
 export const LinkToMainPage = styled(Link)`
@@ -146,6 +178,13 @@ export const TextInstruction = styled.div`
     font: ${defaultTheme.font.headerText};
     font-weight: normal;
     color: #25282B;
+    font-size: 14px;
+    line-height: 19px;
+    
+    @media ${device.tabletM} {
+        font-size: 24px;
+        line-height: 29px;
+    }
 `;
 
 export const SelectWrapper: StyledComponent<any, IInputWrapper> = styled.div <IInputWrapper>` 
@@ -154,6 +193,7 @@ export const SelectWrapper: StyledComponent<any, IInputWrapper> = styled.div <II
     align-items: center;
     position: relative;
     margin-top: 32px;
+    width: 100%;
     
     &:after {
         position: absolute;
@@ -167,16 +207,19 @@ export const SelectWrapper: StyledComponent<any, IInputWrapper> = styled.div <II
         background-repeat: no-repeat;
         background-position: center;
     }
+    
+    @media ${device.laptop} {
+        width: auto;
+    }
 `;
 
 export const SelectInput = styled.input`
-     font: ${defaultTheme.font.headerText};
-     color: #000;
-     padding: 27px 0 27px 27px;
-     height: 84px;
-     min-width: 472px;
-     max-width: 472px;
-     border: 0.801155px solid #000000;
+    font: ${defaultTheme.font.headerText};
+    color: #000;
+    padding: 27px 0 27px 27px;
+    height: 84px;
+    width: 100%;
+    border: 0.801155px solid #000000;
     box-sizing: border-box;
     border-radius: 8.01155px;
     background: transparent;
@@ -186,6 +229,11 @@ export const SelectInput = styled.input`
     }
     &[type='number'] {
         -moz-appearance: textfield;
+    }
+    @media ${device.laptop} {
+        width: auto;
+        min-width: 472px;
+        max-width: 472px;  
     }
 `;
 
@@ -199,6 +247,7 @@ export const SelectOptionWrapper = styled.div`
     align-items: center;
     z-index: 100;
     background-color: #4E8EF3;
+    width: 100%;
 `;
 
 
@@ -218,14 +267,18 @@ export const RuleLink = styled.a`
     text-decoration-line: underline;
     color: #000000;
     font: ${defaultTheme.font.licenseKey};
-    text-align: center;
+    text-align: left;
     padding: 12px 0;
-    margin-left: 65px;
     width: 330px;
     &:link {
         color: #000000;
     }
     &:visited {
         color: #000000;
+    }
+    
+    @media ${device.laptop} {
+      margin-left: 65px;
+      text-align: center;
     }
 `;

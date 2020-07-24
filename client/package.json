@@ -22,6 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "install": "npm install",
     "build": "rimraf ./build && react-scripts build && rimraf ./build/**/*.map",
     "postbuild": "rimraf build/**/*.map",
     "test": "react-scripts test",
@@ -43,5 +44,6 @@
       "last 1 ie version",
       "ie 11"
     ]
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

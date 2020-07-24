@@ -36,6 +36,14 @@ export const links = [
         link: 'news',
     },
     {
+        text: 'Присоединяйся',
+        link: 'join',
+    },
+    {
+        text: 'О проекте',
+        link: 'footer',
+    },
+    {
         text: 'Донат',
         link: 'donate',
     },
