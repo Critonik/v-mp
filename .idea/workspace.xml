@@ -2,37 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b58afc12-464a-47a2-9b7a-ecbe3f38a36e" name="Default Changelist" comment="final build">
-      <change afterPath="$PROJECT_DIR$/client/src/icons/back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/stubs/throttle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/AppStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/AppStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DocumentBlock/DocumentBlockStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DocumentBlock/DocumentBlockStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Footer/FooterStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/FooterStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/HeaderBlock/HeaderLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/HeaderBlock/HeaderLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/HeaderBlock/HeaderLayoutStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/HeaderBlock/HeaderLayoutStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/JoinBlock/JoinBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/JoinBlock/JoinBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/JoinBlock/JoinBlockStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/JoinBlock/JoinBlockStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NavigationBlock/NavitagionBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavigationBlock/NavitagionBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NavigationBlock/NavitagionBlockStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavigationBlock/NavitagionBlockStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/GlobalStyles/mediaBreakpoints.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/GlobalStyles/mediaBreakpoints.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/FooterPromo/FooterPromo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/FooterPromo/FooterPromo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/FooterPromo/FooterStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/MainPage/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MainPage/MainPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/NavigationBlockPromo/NavitagionBlockPromo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavigationBlockPromo/NavitagionBlockPromo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NavigationBlockPromo/NavitagionBlockPromoStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavigationBlockPromo/NavitagionBlockPromoStyles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/NewsBlock/NewsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NewsBlock/NewsBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NewsBlock/NewsBlockStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NewsBlock/NewsBlockStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Servers/Servers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Servers/Servers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Servers/ServersStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Servers/ServersStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Slider/Slider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Slider/Slider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Slider/SliderStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Slider/SliderStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/PromoPage/PromoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PromoPage/PromoPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Steps/Steps.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Steps/Steps.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Steps/StepsStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Steps/StepsStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/icons/slide0.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/icons/slide0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/icons/slide1.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/icons/slide1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/icons/slide2.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/icons/slide2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/stubs/linkStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stubs/linkStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -139,6 +133,8 @@
       <workItem from="1593240853643" duration="1610000" />
       <workItem from="1594792551985" duration="44000" />
       <workItem from="1594809410410" duration="3552000" />
+      <workItem from="1595398512121" duration="614000" />
+      <workItem from="1595595039709" duration="1313000" />
     </task>
     <task id="LOCAL-00001" summary="add server +client">
       <created>1593191542620</created>
@@ -159,41 +155,56 @@
     <option name="LAST_COMMIT_MESSAGE" value="add server +client" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595596318749">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/0.-1200.1920.1160@0.0.1536.824" timestamp="1595596318749" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595356207280" />
     <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1593241135598">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1593241135598" />
-    <state width="1515" height="188" key="GridCell.Tab.0.bottom" timestamp="1594812987398">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1595596361198">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594812987398" />
-    <state width="1515" height="188" key="GridCell.Tab.0.center" timestamp="1594812987398">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824/0.-1200.1920.1160@0.0.1536.824" timestamp="1595596361198" />
+    <state width="1515" height="286" key="GridCell.Tab.0.bottom" timestamp="1595596196193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594812987398" />
-    <state width="1515" height="188" key="GridCell.Tab.0.left" timestamp="1594812987398">
+    <state width="1515" height="286" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1200.1920.1160@0.0.1536.824" timestamp="1595596196193" />
+    <state width="1515" height="286" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595358549133" />
+    <state width="1515" height="286" key="GridCell.Tab.0.center" timestamp="1595596196193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594812987398" />
-    <state width="1515" height="188" key="GridCell.Tab.0.right" timestamp="1594812987398">
+    <state width="1515" height="286" key="GridCell.Tab.0.center/0.0.1536.824/0.-1200.1920.1160@0.0.1536.824" timestamp="1595596196193" />
+    <state width="1515" height="286" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595358549133" />
+    <state width="1515" height="286" key="GridCell.Tab.0.left" timestamp="1595596196193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594812987398" />
+    <state width="1515" height="286" key="GridCell.Tab.0.left/0.0.1536.824/0.-1200.1920.1160@0.0.1536.824" timestamp="1595596196193" />
+    <state width="1515" height="286" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595358549133" />
+    <state width="1515" height="286" key="GridCell.Tab.0.right" timestamp="1595596196193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="286" key="GridCell.Tab.0.right/0.0.1536.824/0.-1200.1920.1160@0.0.1536.824" timestamp="1595596196193" />
+    <state width="1515" height="286" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595358549133" />
     <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1593191552336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1593191552336" />
-    <state x="479" y="129" width="577" height="628" key="find.popup" timestamp="1594812503781">
+    <state x="479" y="129" width="577" height="628" key="find.popup" timestamp="1595595494114">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="479" y="129" width="577" height="628" key="find.popup/0.0.1536.824/0.-1200.1920.1160@0.0.1536.824" timestamp="1595595494114" />
     <state x="479" y="129" width="577" height="628" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1594812503781" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1593237830093">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593237830093" />
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1594812843504">
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1595595933469">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594812843504" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824/0.-1200.1920.1160@0.0.1536.824" timestamp="1595595933469" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595355068986" />
   </component>
 </project>

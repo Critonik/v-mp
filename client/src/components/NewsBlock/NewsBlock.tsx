@@ -72,7 +72,7 @@ const NewsBlock: React.FC = () => {
           id={'#news'}
       >
           <NewsHeader>Новости</NewsHeader>
-          <NewsWrapper>
+          <NewsWrapper id={'NewsWrapper'}>
               {createNews()}
               <NewsLink href={'https://vk.com/gta5m'} target="_blank">Читать другие новости</NewsLink>
           </NewsWrapper>

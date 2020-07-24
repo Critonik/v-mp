@@ -102,7 +102,8 @@ const Steps: React.FC = () => {
                 <iframe title={'steps video'}  width="80%" height="80%" src="https://www.youtube.com/embed/_6YCoyhT5L0" frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen/>
-            </VideoModal>}
+            </VideoModal>
+            }
         </StepsWrapper>
     );
 };

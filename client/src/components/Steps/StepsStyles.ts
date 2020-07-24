@@ -26,7 +26,7 @@ export const StepsWrapper = styled.section`
     box-sizing: border-box;
     overflow-y: auto;
     
-    @media ${device.laptop} {
+    @media ${device.desktop} {
         height: ${blockHeight}px;
         max-height: ${blockHeight}px;
     }
