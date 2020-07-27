@@ -23,7 +23,6 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    max-width: 1920px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -34,7 +33,7 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     
     @media ${device.desktop} {
         background-image: url(${props => props.tabletImage});
-        background-size: 1080px;
+        background-size: 100%;
         background-repeat: no-repeat;
         background-position: right top;
         justify-content: space-around;
@@ -47,6 +46,7 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
             display: none;
         }
     }
+   
 `;
 
 export const SlideWrapper = styled.div`

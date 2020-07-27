@@ -19,7 +19,6 @@ export const StepsWrapper = styled.section`
     width: 100%;
     height: 100%;
     position: relative;
-    max-width: 1920px;
     margin: 0 auto;
     ${scrollStyles};
     padding-top: 48px;

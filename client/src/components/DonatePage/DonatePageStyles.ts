@@ -3,28 +3,36 @@ import { defaultTheme, scrollStyles } from '../../defaultTheme';
 import { device } from '../../GlobalStyles/mediaBreakpoints';
 import { Link } from 'react-router-dom';
 import arrow from '../../icons/arrow.svg';
+import donateBg from '../../icons/donateBg.svg';
 
 interface IInputWrapper {
     icon: string;
 }
+const blockHeight = document.documentElement.clientHeight;
 
 export const DonatePageBody = styled.span`
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     align-items: center;
     & > header {
         height: auto !important;
         max-height: none !important; 
         background: transparent;
     }
-`;
+    
+    @media ${device.desktop} {
+      height: ${blockHeight}px;
+      max-height: ${blockHeight}px;
+    }
 
+`;
 export const DonatePageWrap = styled.div`
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    max-width: 1920px;
+    max-width: 2700px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -53,15 +61,18 @@ export const DonateFormWrapper = styled.div`
     }
 `;
 
-export const BackImage = styled.img`
+export const BackImage = styled.div`
     position: absolute;
     top: 20px;
     right: 0;
     opacity: 0.3;
-    max-height: 1300px;
     background-repeat: no-repeat;
     background-size: contain;
     z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url(${donateBg});
+    background-position: center right;
     @media ${device.desktop} {
         opacity: 1;
     }

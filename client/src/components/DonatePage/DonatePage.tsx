@@ -19,7 +19,6 @@ import {
     SelectWrapper,
     TextInstruction
 } from './DonatePageStyles';
-import donateBg from '../../icons/donateBg.svg';
 import down from '../../icons/down.svg';
 import user from '../../icons/user.svg';
 import dollar from '../../icons/dollar.svg';
@@ -141,7 +140,7 @@ const DonatePage: React.FC = () => {
                                 Вы автоматически соглашаетесь с<br/> <span style={{textDecoration: 'underline'}}>правилами сервера</span>
                             </RuleLink>
                         </DonateForm>
-                        <BackImage src={donateBg} alt={''}/>
+                        <BackImage/>
                     </DonateFormWrapper>
                 </DonatePageWrap>
             <Footer style={{backgroundColor: '#FBFBFB', backgroundImage: 'none'}} link={6} setLink={dispatch}/>

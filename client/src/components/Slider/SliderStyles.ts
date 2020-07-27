@@ -27,7 +27,6 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    max-width: 1920px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -46,7 +45,7 @@ export const SliderSection: StyledComponent<any, IImageProps> = styled('section'
     
     @media ${device.ultra} {
         background-image: url(${props => props.tabletImage});
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: right top;
         &:before {
